@@ -18,6 +18,23 @@ const config = {
 			},
 		},
 		extend: {
+			colors: {
+				primary: '#0A4C82',
+				secondary: '#DEA84A',
+				black: '#1E1E1E',
+				grey: '#E5E5E5',
+				background: '#F8EDDA',
+				'light-black': '#999999',
+				'dark-grey': '#B7B3B3',
+			},
+			fontSize: {
+				'side-heading': '95px',
+				'super-heading': '60px',
+				heading: '50px',
+				'sub-heading': '30px',
+				normal: '18px',
+				small: '15px',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
