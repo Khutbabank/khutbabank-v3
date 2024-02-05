@@ -13,7 +13,7 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className='flex items-center justify-between px-8 py-12 md:px-[100px]'>
+			<div className='flex items-center justify-between py-12'>
 				<Image src='/logo.png' width={197} height={40} alt='logo' />
 				<div className='flex gap-3 items-center'>
 					{links.map((link, i) => (
