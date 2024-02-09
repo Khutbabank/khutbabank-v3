@@ -11,11 +11,12 @@ const HeroSection = () => {
 				<h1 className='font-semibold text-6xl text-primary mt-5'>
 					Jummah Khutbas tailored for the Muslim Community
 				</h1>
-				<div className='flex justify-between gap-3 mt-8'>
+				<div className='flex justify-between items-center gap-14 mt-8'>
 					<Image
 						src='/hero/quran.png'
 						width={888}
 						height={352}
+						className='w-full max-h-[352px] object-cover rounded-normal'
 						alt='Quran'
 					/>
 					<div className='flex flex-col gap-7 justify-self-end md:max-w-[318px]'>

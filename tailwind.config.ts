@@ -35,6 +35,9 @@ const config = {
 				normal: '18px',
 				small: '15px',
 			},
+			borderRadius: {
+				normal: '10px',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
