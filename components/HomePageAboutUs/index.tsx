@@ -1,17 +1,19 @@
 import Image from 'next/image';
 
+import { Button } from '@/components/ui/button';
+
 const HomePageAboutUs = () => {
 	return (
 		<>
-			<div className='bg-white flex items-center justify-between gap-20 px-8 md:px-[100px]'>
+			<div className='bg-white flex items-center justify-between gap-20 py-[100px] px-8 md:px-[100px] md:gap-72'>
 				<Image
-					src='/hero/quran.png'
+					src='/homePageAboutUs/books.png'
 					width={542}
 					height={707}
 					className='w-full max-h-[707px] object-cover rounded-normal'
 					alt='Quran'
 				/>
-				<div className='flex flex-col'>
+				<div className='flex flex-col md:max-w-[540px]'>
 					<h1 className='text-heading font-bold text-primary'>
 						Thousands of Muslims benefitted on daily basis
 					</h1>
@@ -23,6 +25,9 @@ const HomePageAboutUs = () => {
 						love, coping with stress, evolution and others. We also
 						provide tips on how to effectively deliver a sermon.
 					</p>
+					<Button className='bg-primary text-white font-bold rounded-full mt-5 md:mt-24'>
+						Learn More About Us
+					</Button>
 				</div>
 			</div>
 		</>
