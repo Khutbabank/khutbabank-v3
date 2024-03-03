@@ -5,8 +5,8 @@ import KhutbaGrid from './KhutbaGrid';
 const FeaturedKhutbas = () => {
 	return (
 		<>
-			<div className='flex flex-col gap-[76px]'>
-				<div className='flex justify-between items-center gap-4 px-8 md:px-[100px] bg-white'>
+			<div className='flex flex-col gap-10 bg-white px-8 md:px-[100px]'>
+				<div className='flex justify-between items-center gap-4  '>
 					<h1 className='text-heading text-primary font-bold'>
 						Featured Khutba
 					</h1>
