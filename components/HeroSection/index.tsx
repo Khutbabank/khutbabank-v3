@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
 	return (
 		<>
-			<div className='h-screen bg-background px-8 md:px-[100px]'>
+			<div className='h-screen bg-background '>
 				<Navbar />
-				<div className='mt-6'>
+				<div className='mt-6 px-8 md:px-[100px]'>
 					<h1 className='font-semibold text-super-heading leading-tight text-primary'>
 						Jummah Khutbas tailored for the Muslim Community
 					</h1>

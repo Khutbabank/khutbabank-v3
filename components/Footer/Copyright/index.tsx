@@ -2,7 +2,7 @@ const Copyright = () => {
 	return (
 		<>
 			<div className='flex flex-col md:flex-row'>
-				<p className=''>Copyright © 2022 | Khutba Bank</p>
+				<p className='text-black'>Copyright © 2022 | Khutba Bank</p>
 			</div>
 		</>
 	);

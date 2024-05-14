@@ -5,15 +5,15 @@ import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
 	const links: Array<{ href: string; name: string }> = [
-		{ name: 'About Us', href: '/' },
-		{ name: 'Khutbas', href: '/' },
-		{ name: 'Videos', href: '/' },
-		{ name: 'Contact Us', href: '/' },
+		{ name: 'About Us', href: '/about-us' },
+		{ name: 'Khutbas', href: '/khutbas' },
+		{ name: 'Videos', href: '/videos' },
+		{ name: 'Contact Us', href: '/contact-us' },
 	];
 
 	return (
 		<>
-			<div className='flex items-center justify-between py-12'>
+			<div className='flex items-center justify-between py-12 px-8 md:px-[100px]'>
 				<Image src='/logo.svg' width={197} height={40} alt='logo' />
 				<div className='flex gap-3 items-center'>
 					{links.map((link, i) => (
