@@ -1,7 +1,7 @@
-import FeaturedKhutbas from '@/components/FeaturedKhutbas';
-import HeroSection from '@/components/HeroSection';
-import HomePageAboutUs from '@/components/HomePageAboutUs';
-import BrowseVideoBank from '@/components/BrowseVideoBank';
+import FeaturedKhutbas from '@/components/Home/FeaturedKhutbas';
+import HeroSection from '@/components/Home/HeroSection';
+import HomePageAboutUs from '@/components/Home/HomePageAboutUs';
+import BrowseVideoBank from '@/components/Home/BrowseVideoBank';
 import Footer from '@/components/Footer';
 
 export default function Home() {

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import Navbar from '../Navbar';
+import Navbar from '../../Navbar';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {

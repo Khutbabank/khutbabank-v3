@@ -15,7 +15,7 @@ const AboutUsLayout = ({
 	children: React.ReactNode;
 }>) => {
 	return (
-		<div className='bg-white'>
+		<div className='bg-white min-h-screen'>
 			<Navbar />
 			{children}
 			<Footer />

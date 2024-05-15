@@ -1,7 +1,9 @@
+import HeroSection from '@/components/AboutUs/HeroSection';
+
 const AboutUs = () => {
 	return (
 		<>
-			<div></div>
+			<HeroSection />
 		</>
 	);
 };
