@@ -3,11 +3,11 @@ import Image from 'next/image';
 const HeroSection = () => {
 	return (
 		<>
-			<div className='flex md:justify-between md:items-center md:gap-20 px-8 md:px-[100px]'>
+			<div className='flex md:justify-between md:items-center md:gap-20 px-8 md:px-[100px] py-9'>
 				<Image
 					className='rounded-lg hidden md:block'
 					src='/hero/books.png'
-					width={542}
+					width={2042}
 					height={707}
 					alt='books'
 				/>
