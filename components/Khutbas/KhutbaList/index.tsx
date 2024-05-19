@@ -7,6 +7,8 @@ import {
 	SelectValue,
 } from '@/components/ui/select';
 
+import Khutba from '../Khutba';
+
 const KhutbaList = () => {
 	return (
 		<>
@@ -14,6 +16,7 @@ const KhutbaList = () => {
 				<h1 className='text-primary text-heading font-bold'>
 					Browse the Khutba bank
 				</h1>
+
 				<form className='mt-4'>
 					<p className='text-normal text-black'>
 						Use the filters to narrow your search
@@ -36,6 +39,17 @@ const KhutbaList = () => {
 								<SelectItem value='prayer'>Prayer</SelectItem>
 							</SelectContent>
 						</Select>
+					</div>
+
+					<div className='mt-20 grid grid-cols-3'>
+						<Khutba
+							id='1'
+							description="A short story of Prophet Ibrahim AS, the incident with his father and people and the bulding of Ka'bah with..."
+							category='Story'
+							imageId='1'
+							title='Story of Prophet Ibrahim AS'
+							publishedOn='12/12/2024'
+						/>
 					</div>
 				</form>
 			</div>
