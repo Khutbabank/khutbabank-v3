@@ -15,7 +15,7 @@ const Navbar = () => {
 		<>
 			<div className='flex items-center justify-between py-12 px-8 md:px-[100px]'>
 				<Image src='/logo.svg' width={197} height={40} alt='logo' />
-				<div className='flex gap-3 items-center'>
+				<div className='flex gap-5 items-center'>
 					{links.map((link, i) => (
 						<Link
 							className='text-black text-normal hover:underline'

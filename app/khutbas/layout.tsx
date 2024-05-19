@@ -4,12 +4,12 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-	title: 'Khutba Bank | About Us',
+	title: 'Khutba Bank | Khutbas',
 	description:
 		'For Khateebs all around the World ... Khutba Bank has regularly provided high-quality khutba scripts for schools, universities, youth circles, mosques and work ...',
 };
 
-const AboutUsLayout = ({
+const KhutbasLayout = ({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
@@ -23,4 +23,4 @@ const AboutUsLayout = ({
 	);
 };
 
-export default AboutUsLayout;
+export default KhutbasLayout;
