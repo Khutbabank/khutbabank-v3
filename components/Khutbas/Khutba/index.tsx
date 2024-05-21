@@ -15,16 +15,13 @@ interface Props {
 const Khutba = ({ title, description, category, id, publishedOn }: Props) => {
 	return (
 		<>
-			<Link
-				href='/khutbas'
-				className='flex flex-col p-5 rounded-2xl border-[1px] border-dark-grey max-w-[400px]'
-			>
+			<div className='flex flex-col p-5 rounded-2xl border-[1px] border-dark-grey'>
 				<Image
 					src='/khutba/image.png'
-					width={380}
-					height={200}
+					width={400}
+					height={400}
 					alt='thumbnail'
-					className='rounded-2xl'
+					className='rounded-2xl w-full'
 				/>
 
 				<div className='flex flex-col gap-4 mt-6'>
@@ -52,16 +49,18 @@ const Khutba = ({ title, description, category, id, publishedOn }: Props) => {
 				</div>
 
 				<div className='flex gap-5 mt-10 w-full'>
-					<Button className='flex items-center justify-center gap-3 bg-primary text-white w-full'>
-						<i className='text-white text-xl ri-book-open-fill' />
-						Read now
-					</Button>
+					<Link href='/khutbas' className='w-full'>
+						<Button className='flex items-center justify-center gap-3 bg-primary text-white w-full'>
+							<i className='text-white text-xl ri-book-open-fill' />
+							Read now
+						</Button>
+					</Link>
 					<Button className='flex items-center justify-center gap-3 bg-secondary text-white w-full'>
 						<i className='text-2xl text-white ri-download-cloud-fill' />
 						Download
 					</Button>
 				</div>
-			</Link>
+			</div>
 		</>
 	);
 };

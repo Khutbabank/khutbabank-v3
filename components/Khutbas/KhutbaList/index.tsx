@@ -41,7 +41,31 @@ const KhutbaList = () => {
 						</Select>
 					</div>
 
-					<div className='mt-20 grid grid-cols-3'>
+					<div className='mt-20 grid grid-cols-1 md:grid-cols-3 md:gap-4'>
+						<Khutba
+							id='1'
+							description="A short story of Prophet Ibrahim AS, the incident with his father and people and the bulding of Ka'bah with..."
+							category='Story'
+							imageId='1'
+							title='Story of Prophet Ibrahim AS'
+							publishedOn='12/12/2024'
+						/>
+						<Khutba
+							id='1'
+							description="A short story of Prophet Ibrahim AS, the incident with his father and people and the bulding of Ka'bah with..."
+							category='Story'
+							imageId='1'
+							title='Story of Prophet Ibrahim AS'
+							publishedOn='12/12/2024'
+						/>
+						<Khutba
+							id='1'
+							description="A short story of Prophet Ibrahim AS, the incident with his father and people and the bulding of Ka'bah with..."
+							category='Story'
+							imageId='1'
+							title='Story of Prophet Ibrahim AS'
+							publishedOn='12/12/2024'
+						/>
 						<Khutba
 							id='1'
 							description="A short story of Prophet Ibrahim AS, the incident with his father and people and the bulding of Ka'bah with..."
