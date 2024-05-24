@@ -1,14 +1,33 @@
 'use client';
 
+import { useState } from 'react';
+
 import Content from '@/components/Khutba/Content';
 import ControlButtons from '@/components/Khutba/ControlButtons';
 
 const Khutba = () => {
+	const [isShortKhutbaChecked, setIsShortKhutbaChecked] =
+		useState<boolean>(false);
+	const [isMediumKhutbaChecked, setIsMediumKhutbaChecked] =
+		useState<boolean>(false);
+	const [isLongKhutbaChecked, setIsLongKhutbaChecked] =
+		useState<boolean>(false);
+
 	return (
 		<>
 			<div className='px-8 md:px-[100px] py-24 pt-20'>
-				<ControlButtons />
+				<ControlButtons
+					isShortKhutbaChecked={isShortKhutbaChecked}
+					isMediumKhutbaChecked={isMediumKhutbaChecked}
+					isLongKhutbaChecked={isLongKhutbaChecked}
+					setIsShortKhutbaChecked={setIsShortKhutbaChecked}
+					setIsMediumKhutbaChecked={setIsMediumKhutbaChecked}
+					setIsLongKhutbaChecked={setIsLongKhutbaChecked}
+				/>
 				<Content
+					isShortKhutbaChecked={isShortKhutbaChecked}
+					isMediumKhutbaChecked={isMediumKhutbaChecked}
+					isLongKhutbaChecked={isLongKhutbaChecked}
 					title='Wudu - Its Secrets and Rewards'
 					firstPart='Allah created life as a test and the test is to worship Allah. Allah says
 ,وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ
