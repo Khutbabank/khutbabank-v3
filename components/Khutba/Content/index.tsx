@@ -1,3 +1,5 @@
+import { MutableRefObject } from 'react';
+
 import defaultTexts from '@/configs/defaultTexts';
 
 interface Props {
@@ -7,6 +9,8 @@ interface Props {
 	isShortKhutbaChecked: boolean;
 	isMediumKhutbaChecked: boolean;
 	isLongKhutbaChecked: boolean;
+	componentRef: MutableRefObject<null>;
+	paddingClassNames: string;
 }
 
 const Content = ({
@@ -16,10 +20,15 @@ const Content = ({
 	isShortKhutbaChecked,
 	isMediumKhutbaChecked,
 	isLongKhutbaChecked,
+	componentRef,
+	paddingClassNames,
 }: Props) => {
 	return (
 		<>
-			<div className='flex flex-col mt-7'>
+			<div
+				className={`flex flex-col mt-7 ${paddingClassNames}`}
+				ref={componentRef}
+			>
 				<h1 className='text-heading text-primary font-bold'>{title}</h1>
 
 				{isShortKhutbaChecked && (

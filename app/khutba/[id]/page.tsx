@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+
+import { useReactToPrint } from 'react-to-print';
 
 import Content from '@/components/Khutba/Content';
 import ControlButtons from '@/components/Khutba/ControlButtons';
@@ -13,18 +15,29 @@ const Khutba = () => {
 	const [isLongKhutbaChecked, setIsLongKhutbaChecked] =
 		useState<boolean>(false);
 
+	const componentRef = useRef(null);
+	const handlePrint = useReactToPrint({
+		content: () => componentRef.current,
+	});
+
+	const paddingClassNames = 'px-8 md:px-[100px]';
+
 	return (
 		<>
-			<div className='px-8 md:px-[100px] py-24 pt-20'>
+			<div className='py-24 pt-20'>
 				<ControlButtons
+					handlePrint={handlePrint}
 					isShortKhutbaChecked={isShortKhutbaChecked}
 					isMediumKhutbaChecked={isMediumKhutbaChecked}
 					isLongKhutbaChecked={isLongKhutbaChecked}
 					setIsShortKhutbaChecked={setIsShortKhutbaChecked}
 					setIsMediumKhutbaChecked={setIsMediumKhutbaChecked}
 					setIsLongKhutbaChecked={setIsLongKhutbaChecked}
+					paddingClassNames={paddingClassNames}
 				/>
 				<Content
+					paddingClassNames={paddingClassNames}
+					componentRef={componentRef}
 					isShortKhutbaChecked={isShortKhutbaChecked}
 					isMediumKhutbaChecked={isMediumKhutbaChecked}
 					isLongKhutbaChecked={isLongKhutbaChecked}

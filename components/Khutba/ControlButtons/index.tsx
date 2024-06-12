@@ -11,6 +11,8 @@ interface Props {
 	setIsShortKhutbaChecked: Dispatch<SetStateAction<boolean>>;
 	setIsMediumKhutbaChecked: Dispatch<SetStateAction<boolean>>;
 	setIsLongKhutbaChecked: Dispatch<SetStateAction<boolean>>;
+	handlePrint: unknown | any; // todo: please type this proper
+	paddingClassNames: string;
 }
 
 const ControlButtons = ({
@@ -20,10 +22,14 @@ const ControlButtons = ({
 	setIsShortKhutbaChecked,
 	setIsMediumKhutbaChecked,
 	setIsLongKhutbaChecked,
+	handlePrint,
+	paddingClassNames,
 }: Props) => {
 	return (
 		<>
-			<div className='flex flex-col gap-8 items-center'>
+			<div
+				className={`flex flex-col gap-8 items-center ${paddingClassNames}`}
+			>
 				<div className='flex items-center justify-center gap-3 mx-auto w-full'>
 					<div className='flex items-center space-x-2'>
 						<Switch
@@ -68,7 +74,10 @@ const ControlButtons = ({
 					</div>
 				</div>
 
-				<Button className='flex items-center justify-center gap-3 bg-secondary text-white'>
+				<Button
+					onClick={handlePrint}
+					className='flex items-center justify-center gap-3 bg-secondary text-white'
+				>
 					<i className='text-2xl text-white ri-printer-fill' />
 					Print Khutba
 				</Button>
