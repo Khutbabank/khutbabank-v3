@@ -49,7 +49,7 @@ const Khutba = ({ title, description, category, id, publishedOn }: Props) => {
 				</div>
 
 				<div className='flex gap-5 mt-10 w-full'>
-					<Link href='/khutbas' className='w-full'>
+					<Link href={`/khutba/${id}`} className='w-full'>
 						<Button className='flex items-center justify-center gap-3 bg-primary text-white w-full'>
 							<i className='text-white text-xl ri-book-open-fill' />
 							Read now
