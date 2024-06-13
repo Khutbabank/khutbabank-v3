@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react';
 
-import type { QuerySnapshot, DocumentData } from 'firebase/firestore';
-
 import { Input } from '@/components/ui/input';
 import {
 	Select,
@@ -13,7 +11,7 @@ import {
 	SelectValue,
 } from '@/components/ui/select';
 import Khutba from '../Khutba';
-import { getKhutbas } from '@/firebase/functions/khutbas';
+import { getKhutbas, getKhutbaImage } from '@/firebase/functions/khutbas';
 
 const KhutbaList = () => {
 	const [khutbas, setKhutbas] = useState<
@@ -24,20 +22,51 @@ const KhutbaList = () => {
 			imageId: string;
 			title: string;
 			createdTimeStamp: string;
+			imageUrl: string | null;
 		}>
 	>();
 	const [loading, setLoading] = useState<boolean>(true);
-	const [error, isError] = useState<boolean>(false);
+	const [error, setError] = useState<boolean>(false);
 
 	useEffect(() => {
 		const getData = async () => {
 			const data = await getKhutbas();
 
 			if (data.result) {
-				console.log(data.result);
+				// @ts-ignore - I had no choice
+				const khutbasWithImages = data.result.map((khutba: any) => ({
+					...khutba,
+					imageUrl: null,
+				}));
 
 				setKhutbas(data.result);
 				setLoading(false);
+
+				const imagePromises = khutbasWithImages.map(
+					async (khutba, index) => {
+						const imageData = await getKhutbaImage({
+							imageId: khutba.imageId,
+						});
+
+						if (imageData.result) {
+							setKhutbas((prevKhutbas: any) =>
+								prevKhutbas.map((k: any, i: any) =>
+									i === index
+										? { ...k, imageUrl: imageData.result }
+										: k,
+								),
+							);
+						}
+					},
+				);
+
+				await Promise.all(imagePromises);
+
+				return;
+			}
+
+			if (data.error) {
+				setError(true);
 			}
 		};
 
@@ -77,7 +106,7 @@ const KhutbaList = () => {
 							</Select>
 						</div>
 
-						<div className='mt-20 grid grid-cols-1 md:grid-cols-3 md:gap-4'>
+						<div className='mt-20 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4'>
 							{khutbas &&
 								khutbas.length > 0 &&
 								khutbas.map((k, i) => (
@@ -89,6 +118,7 @@ const KhutbaList = () => {
 										imageId={k.imageId}
 										title={k.title}
 										publishedOn={k.createdTimeStamp}
+										imageUrl={k.imageUrl}
 									/>
 								))}
 
@@ -99,11 +129,12 @@ const KhutbaList = () => {
 								imageId='1'
 								title='Story of Prophet Ibrahim AS'
 								publishedOn='12/12/2024'
+								imageUrl={null}
 							/>
 						</div>
 					</form>
 				) : (
-					<p>Loading ...</p>
+					<p className='text-black font-bold text-xl mt-3'>Loading ...</p>
 				)}
 			</div>
 		</>

@@ -10,21 +10,29 @@ interface Props {
 	imageId: string;
 	title: string;
 	publishedOn: string;
+	imageUrl: string | null;
 }
 
-const Khutba = ({ title, description, category, id, publishedOn }: Props) => {
+const Khutba = ({
+	title,
+	description,
+	category,
+	id,
+	publishedOn,
+	imageUrl,
+}: Props) => {
 	return (
 		<>
 			<div className='flex flex-col p-5 rounded-2xl border-[1px] border-dark-grey'>
 				<Image
-					src='/khutba/image.png'
+					src={imageUrl ? imageUrl : '/khutba/image.png'}
 					width={400}
 					height={400}
 					alt='thumbnail'
-					className='rounded-2xl w-full'
+					className='rounded-2xl w-full h-full max-h-[22rem] max-w-[30rem] object-cover object-center'
 				/>
 
-				<div className='flex flex-col gap-4 mt-6'>
+				<div className='flex flex-col gap-4 mt-6 mb-6'>
 					<p className='text-normal font-bold text-black'>{title}</p>
 					<p className='text-small text-black'>{description}</p>
 				</div>

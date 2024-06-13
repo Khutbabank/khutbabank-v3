@@ -41,9 +41,8 @@ export const getKhutbaImage = async ({ imageId }: GetKhutbaImage) => {
 
 		await getDownloadURL(storageRef)
 			.then((url) => {
-				console.log(url);
-
 				result = `https://ik.imagekit.io/khutbabank/o${url.split('/o')[1]}`;
+				// result = url;
 			})
 			.catch((err) => {
 				error = err;
