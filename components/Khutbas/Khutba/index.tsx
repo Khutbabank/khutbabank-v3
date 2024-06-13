@@ -29,7 +29,7 @@ const Khutba = ({ title, description, category, id, publishedOn }: Props) => {
 					<p className='text-small text-black'>{description}</p>
 				</div>
 
-				<div className='h-[0.1px] border-[1px] border-dark-grey my-4' />
+				<div className='h-[0.1px] border-[1px] border-dark-grey my-4 mt-auto' />
 
 				<div className='flex gap-4 justify-between'>
 					<div className='flex flex-col gap-1'>
