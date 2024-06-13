@@ -15,3 +15,13 @@ One of the button code example:
 ```
 
 4. Here is the [UI Design](https://www.figma.com/file/thFvIqZHAPNUQbbsm6JL19/Khutba-Bank-v3?type=design&t=ngeHCyPBdhOyoUUW-6) of the new website.
+
+## Things left to work on
+
+-  [ ] Make single khutba page work
+-  [ ] Make download button work
+-  [ ] Create contact us page
+-  [ ] Create video page
+-  [ ] Add the recording of the arabic texts in each khutba page
+-  [ ] Make website responsive
+-  [ ] Add state management (future)
