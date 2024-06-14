@@ -1,4 +1,10 @@
-import { getDoc, getDocs, getFirestore, collection } from 'firebase/firestore';
+import {
+	doc,
+	getDoc,
+	getDocs,
+	getFirestore,
+	collection,
+} from 'firebase/firestore';
 import { getStorage, getDownloadURL, ref } from 'firebase/storage';
 
 import firebase from 'firebaseApp';
@@ -49,6 +55,33 @@ export const getKhutbaImage = async ({ imageId }: GetKhutbaImage) => {
 
 				result = null;
 			});
+	} catch (e) {
+		error = e;
+	}
+
+	return { result, error };
+};
+
+export const getKhutba = async ({ id }: GetKhutba) => {
+	let result = null;
+	let error = null;
+
+	try {
+		const docRef = doc(db, 'khutbas', id);
+		const docSnap = await getDoc(docRef);
+
+		// IDK what I am doing here ... welp
+		result = docSnap.data() as {
+			category: string;
+			description: string;
+			id: string;
+			imageId: string;
+			title: string;
+			createdTimeStamp: string;
+			imageUrl: string | null;
+			khutba_first_part: string;
+			khutba_second_part: string;
+		};
 	} catch (e) {
 		error = e;
 	}
