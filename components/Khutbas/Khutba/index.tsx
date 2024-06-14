@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import jsPDF from 'jspdf';
+
 import { Button } from '@/components/ui/button';
 
 interface Props {
@@ -11,6 +13,8 @@ interface Props {
 	title: string;
 	publishedOn: string;
 	imageUrl: string | null;
+	khutbaFirstPart: string;
+	khutbaSecondPart: string;
 }
 
 const Khutba = ({
@@ -20,7 +24,26 @@ const Khutba = ({
 	id,
 	publishedOn,
 	imageUrl,
+	khutbaFirstPart,
+	khutbaSecondPart,
 }: Props) => {
+	const onDownloadButtonClick = () => {
+		const doc = new jsPDF();
+
+		doc.text(`Title: ${title}`, 20, 10);
+		doc.text(`Description: ${description}`, 20, 20);
+		doc.text(`Category: ${category}`, 20, 30);
+
+		const firstPartLine = doc.splitTextToSize(khutbaFirstPart, 180);
+		doc.text(`First Part: ${firstPartLine}`, 20, 40);
+
+		const offset = doc.getTextDimensions(khutbaFirstPart).h + 20;
+		const secondPartLine = doc.splitTextToSize(khutbaSecondPart, 180);
+		doc.text(`Second Part: ${secondPartLine}`, 20, offset);
+
+		doc.save(`khutba-${title}.pdf`);
+	};
+
 	return (
 		<>
 			<div className='flex flex-col p-5 rounded-2xl border-[1px] border-dark-grey'>
@@ -63,7 +86,10 @@ const Khutba = ({
 							Read now
 						</Button>
 					</Link>
-					<Button className='flex items-center justify-center gap-3 bg-secondary text-white w-full'>
+					<Button
+						onClick={onDownloadButtonClick}
+						className='flex items-center justify-center gap-3 bg-secondary text-white w-full'
+					>
 						<i className='text-2xl text-white ri-download-cloud-fill' />
 						Download
 					</Button>

@@ -23,6 +23,8 @@ const KhutbaList = () => {
 			title: string;
 			createdTimeStamp: string;
 			imageUrl: string | null;
+			khutba_first_part: string;
+			khutba_second_part: string;
 		}>
 	>();
 	const [loading, setLoading] = useState<boolean>(true);
@@ -125,18 +127,10 @@ const KhutbaList = () => {
 											title={k.title}
 											publishedOn={k.createdTimeStamp}
 											imageUrl={k.imageUrl}
+											khutbaFirstPart={k.khutba_first_part}
+											khutbaSecondPart={k.khutba_second_part}
 										/>
 									))}
-
-								<Khutba
-									id='1'
-									description="A short story of Prophet Ibrahim AS, the incident with his father and people and the bulding of Ka'bah with..."
-									category='Story'
-									imageId='1'
-									title='Story of Prophet Ibrahim AS'
-									publishedOn='12/12/2024'
-									imageUrl={null}
-								/>
 							</div>
 						</form>
 					)
