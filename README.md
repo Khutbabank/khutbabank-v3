@@ -18,7 +18,7 @@ One of the button code example:
 
 ## Things left to work on
 
--  [ ] Make single khutba page work
+-  [x] Make single khutba page work
 -  [ ] Make download button work
 -  [ ] Create contact us page
 -  [ ] Create video page
