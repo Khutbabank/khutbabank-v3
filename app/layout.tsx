@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 
+import { Toaster } from 'react-hot-toast';
+
 import './globals.css';
 import 'remixicon/fonts/remixicon.css';
 
@@ -19,7 +21,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={montserrat.className}>{children}</body>
+			<body className={montserrat.className}>
+				<Toaster />
+				{children}
+			</body>
 		</html>
 	);
 }

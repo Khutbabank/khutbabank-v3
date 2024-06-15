@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pdfme/common": "^4.0.2",
+    "@pdfme/ui": "^4.0.2",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
@@ -16,11 +18,11 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "firebase": "^10.12.2",
-    "jspdf": "^2.5.1",
     "lucide-react": "^0.323.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "react-to-print": "^2.15.1",
     "remixicon": "^4.2.0",
     "tailwind-merge": "^2.2.1",

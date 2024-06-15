@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import jsPDF from 'jspdf';
+import toast from 'react-hot-toast';
 
 import { Button } from '@/components/ui/button';
 
@@ -27,21 +27,10 @@ const Khutba = ({
 	khutbaFirstPart,
 	khutbaSecondPart,
 }: Props) => {
-	const onDownloadButtonClick = () => {
-		const doc = new jsPDF();
+	const onDownloadButtonClick = (e: React.MouseEvent<HTMLElement>) => {
+		e.preventDefault();
 
-		doc.text(`Title: ${title}`, 20, 10);
-		doc.text(`Description: ${description}`, 20, 20);
-		doc.text(`Category: ${category}`, 20, 30);
-
-		const firstPartLine = doc.splitTextToSize(khutbaFirstPart, 180);
-		doc.text(`First Part: ${firstPartLine}`, 20, 40);
-
-		const offset = doc.getTextDimensions(khutbaFirstPart).h + 20;
-		const secondPartLine = doc.splitTextToSize(khutbaSecondPart, 180);
-		doc.text(`Second Part: ${secondPartLine}`, 20, offset);
-
-		doc.save(`khutba-${title}.pdf`);
+		toast('Feature coming soon ...');
 	};
 
 	return (
