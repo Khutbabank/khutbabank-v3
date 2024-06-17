@@ -19,7 +19,7 @@ One of the button code example:
 ## Things left to work on
 
 -  [x] Make single khutba page work
--  [ ] Make download button work
+-  [ ] Make download button work - added coming soon to it
 -  [ ] Create contact us page
 -  [ ] Create video page
 -  [ ] Add the recording of the arabic texts in each khutba page
