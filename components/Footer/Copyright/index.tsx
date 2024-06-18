@@ -1,7 +1,7 @@
 const Copyright = () => {
 	return (
 		<>
-			<div className='flex flex-col md:flex-row'>
+			<div className='flex flex-col mt-7 md:flex-row md:mt-0'>
 				<p className='text-black'>Copyright © 2022 | Khutba Bank</p>
 			</div>
 		</>

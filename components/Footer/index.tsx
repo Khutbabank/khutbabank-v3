@@ -7,7 +7,7 @@ const Footer = () => {
 	return (
 		<>
 			<footer className='flex flex-col px-8 mt-auto md:px-[100px] py-12 bg-background'>
-				<div className='flex flex-col md:flex-row md:justify-between'>
+				<div className='flex flex-col gap-6 md:flex-row md:justify-between'>
 					<div className='my-auto'>
 						<Image src='/logo.svg' width={250} height={40} alt='logo' />
 					</div>
