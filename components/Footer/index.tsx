@@ -27,26 +27,26 @@ const Footer = () => {
 								</Link>
 								<Link
 									className='font-normal text-black hover:underline'
-									href='/'
+									href='/about-us'
 								>
 									About Us
 								</Link>
 								<Link
 									className='font-normal text-black hover:underline'
-									href='/'
+									href='/videos'
 								>
 									Videos
 								</Link>
 								<Link
 									className='font-normal text-black hover:underline'
-									href='/'
+									href='/khutbas'
 								>
 									Khutbas
 								</Link>
 							</div>
 						</div>
 
-						<div className='flex flex-col'>
+						{/* <div className='flex flex-col'>
 							<p className='text-normal font-bold text-primary'>
 								Common Khutbas
 							</p>
@@ -77,7 +77,7 @@ const Footer = () => {
 									Friday - The Chosen Day
 								</Link>
 							</div>
-						</div>
+						</div> */}
 
 						<div className='flex flex-col'>
 							<p className='text-normal font-bold text-primary'>
@@ -87,13 +87,13 @@ const Footer = () => {
 							<div className='flex flex-col gap-3 mt-5'>
 								<Link
 									className='font-normal text-black hover:underline'
-									href='/'
+									href='/contact-us'
 								>
 									Contact Us
 								</Link>
 								<Link
 									className='font-normal text-black hover:underline'
-									href='/'
+									href='/coming-soon'
 								>
 									FAQ
 								</Link>
