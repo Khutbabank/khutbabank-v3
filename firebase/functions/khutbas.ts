@@ -4,6 +4,9 @@ import {
 	getDocs,
 	getFirestore,
 	collection,
+	query,
+	orderBy,
+	limit,
 } from 'firebase/firestore';
 import { getStorage, getDownloadURL, ref } from 'firebase/storage';
 
@@ -26,6 +29,27 @@ export const getKhutbas = async () => {
 
 	try {
 		const res = await getDocs(collection(db, 'khutbas'));
+		result = [];
+
+		res.forEach((r) => {
+			result.push(r.data());
+		});
+	} catch (e) {
+		error = e;
+	}
+
+	return { result, error };
+};
+
+/* Limited to 5 khutbas */
+export const getLatestKhutbas = async () => {
+	let result = null;
+	let error = null;
+
+	try {
+		const khutbasRef = collection(db, 'khutbas');
+		const q = query(khutbasRef, orderBy('createdTimestamp'), limit(4));
+		const res = await getDocs(q);
 		result = [];
 
 		res.forEach((r) => {

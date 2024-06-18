@@ -40,7 +40,7 @@ const Navbar = () => {
 					/>
 				</Link>
 
-				<div className='hidden md:flex gap-5 items-center'>
+				<div className='hidden md:flex gap-5 items-center mx-auto'>
 					{links.map((link, i) => (
 						<Link
 							className='text-black text-normal hover:underline'

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Navbar from '../../Navbar';
 import { Button } from '@/components/ui/button';
@@ -29,9 +30,11 @@ const HeroSection = () => {
 								scripts for schools, universities, youth circles,
 								mosques and work places.
 							</p>
-							<Button className='bg-primary text-white font-bold rounded-full'>
-								View All Khutbas
-							</Button>
+							<Link href='/khutbas'>
+								<Button className='bg-primary text-white font-bold rounded-full'>
+									View All Khutbas
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</div>

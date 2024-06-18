@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
 
 import KhutbaGrid from './KhutbaGrid';
@@ -10,9 +12,11 @@ const FeaturedKhutbas = () => {
 					<h1 className='text-heading text-primary font-bold'>
 						Featured Khutba
 					</h1>
-					<Button className='bg-secondary rounded-full font-bold px-8'>
-						All Khutbas
-					</Button>
+					<Link href='/khutbas'>
+						<Button className='bg-secondary rounded-full font-bold px-8'>
+							All Khutbas
+						</Button>
+					</Link>
 				</div>
 
 				<KhutbaGrid />

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
 
 const BrowseVideoBank = () => {
@@ -12,9 +14,11 @@ const BrowseVideoBank = () => {
 					ever-growing playlist of videos, tutorials, and even courses to
 					guide you through your endeavours.
 				</p>
-				<Button className='bg-secondary rounded-full font-bold px-8 mt-12'>
-					Browse Video Bank
-				</Button>
+				<Link href='/videos'>
+					<Button className='bg-secondary rounded-full font-bold px-8 mt-12'>
+						Browse Video Bank
+					</Button>
+				</Link>
 			</div>
 		</>
 	);

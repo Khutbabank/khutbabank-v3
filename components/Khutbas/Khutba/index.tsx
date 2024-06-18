@@ -24,8 +24,6 @@ const Khutba = ({
 	id,
 	publishedOn,
 	imageUrl,
-	khutbaFirstPart,
-	khutbaSecondPart,
 }: Props) => {
 	const onDownloadButtonClick = (e: React.MouseEvent<HTMLElement>) => {
 		e.preventDefault();
