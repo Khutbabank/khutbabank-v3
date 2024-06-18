@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import toast from 'react-hot-toast';
+import { Timestamp } from 'firebase/firestore';
 
 import { Button } from '@/components/ui/button';
 
@@ -11,7 +12,7 @@ interface Props {
 	id: string;
 	imageId: string;
 	title: string;
-	publishedOn: string;
+	publishedOn: Timestamp;
 	imageUrl: string | null;
 	khutbaFirstPart: string;
 	khutbaSecondPart: string;
@@ -62,7 +63,11 @@ const Khutba = ({
 
 					<div className='flex flex-col gap-1'>
 						<p className='text-black'>Published On</p>
-						<p className='text-black font-bold'>{publishedOn}</p>
+						<p className='text-black font-bold'>
+							{`${publishedOn.toDate().getDate()}/${
+								publishedOn.toDate().getMonth() + 1
+							}/${publishedOn.toDate().getFullYear()}`}
+						</p>
 					</div>
 				</div>
 

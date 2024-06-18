@@ -7,6 +7,7 @@ import {
 	query,
 	orderBy,
 	limit,
+	Timestamp,
 } from 'firebase/firestore';
 import { getStorage, getDownloadURL, ref } from 'firebase/storage';
 
@@ -28,7 +29,9 @@ export const getKhutbas = async () => {
 	let error = null;
 
 	try {
-		const res = await getDocs(collection(db, 'khutbas'));
+		const khutbasRef = collection(db, 'khutbas');
+		const q = query(khutbasRef, orderBy('createdTimestamp', 'desc'));
+		const res = await getDocs(q);
 		result = [];
 
 		res.forEach((r) => {
@@ -105,7 +108,7 @@ export const getKhutba = async ({ id }: GetKhutba) => {
 			id: string;
 			imageId: string;
 			title: string;
-			createdTimeStamp: string;
+			createdTimestamp: Timestamp;
 			imageUrl: string | null;
 			khutba_first_part: string;
 			khutba_second_part: string;

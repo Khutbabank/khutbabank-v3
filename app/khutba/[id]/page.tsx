@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 
 import { useReactToPrint } from 'react-to-print';
+import { Timestamp } from 'firebase/firestore';
 
 import Content from '@/components/Khutba/Content';
 import ControlButtons from '@/components/Khutba/ControlButtons';
@@ -24,7 +25,7 @@ const Khutba = () => {
 		id: string;
 		imageId: string;
 		title: string;
-		createdTimeStamp: string;
+		createdTimestamp: Timestamp;
 		imageUrl: string | null;
 		khutba_first_part: string;
 		khutba_second_part: string;

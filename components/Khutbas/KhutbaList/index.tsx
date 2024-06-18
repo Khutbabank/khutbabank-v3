@@ -3,15 +3,16 @@
 import { useState, useEffect } from 'react';
 
 import { Input } from '@/components/ui/input';
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/components/ui/select';
+// import {
+// 	Select,
+// 	SelectContent,
+// 	SelectItem,
+// 	SelectTrigger,
+// 	SelectValue,
+// } from '@/components/ui/select';
 import Khutba from '../Khutba';
 import { getKhutbas, getKhutbaImage } from '@/firebase/functions/khutbas';
+import { Timestamp } from 'firebase/firestore';
 
 const KhutbaList = () => {
 	const [khutbas, setKhutbas] = useState<
@@ -21,12 +22,26 @@ const KhutbaList = () => {
 			id: string;
 			imageId: string;
 			title: string;
-			createdTimeStamp: string;
+			createdTimestamp: Timestamp;
 			imageUrl: string | null;
 			khutba_first_part: string;
 			khutba_second_part: string;
 		}>
 	>();
+	const [filteredKhutbas, setFilteredKhutbas] = useState<
+		Array<{
+			category: string;
+			description: string;
+			id: string;
+			imageId: string;
+			title: string;
+			createdTimestamp: Timestamp;
+			imageUrl: string | null;
+			khutba_first_part: string;
+			khutba_second_part: string;
+		}>
+	>([]);
+	const [khutbaSearchText, setKhutbaSearchText] = useState<string>('');
 	const [loading, setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<boolean>(false);
 
@@ -76,6 +91,26 @@ const KhutbaList = () => {
 		getData();
 	}, []);
 
+	const onSearchKhutbaInputChange = (
+		e: React.ChangeEvent<HTMLInputElement>,
+	) => {
+		setKhutbaSearchText(e.target.value);
+
+		if (e.target.value && e.target.value.length > 0) {
+			const filtered = khutbas?.filter((k) =>
+				k.title.toLowerCase().includes(e.target.value.toLowerCase()),
+			);
+
+			if (filtered && filtered?.length > 0) {
+				setFilteredKhutbas(filtered);
+			} else {
+				setFilteredKhutbas([]);
+			}
+		} else {
+			setFilteredKhutbas([]);
+		}
+	};
+
 	return (
 		<>
 			<div className='flex flex-col px-8 md:px-[100px] py-24 pt-20'>
@@ -88,7 +123,7 @@ const KhutbaList = () => {
 							There has been an error. Please try again later.
 						</p>
 					) : (
-						// todo: look into this form - why do we have it here? is it needed?
+						// TODO: look into this form element - why do we have it here? is it needed?
 						<form className='mt-4'>
 							<p className='text-normal text-black'>
 								Use the filters to narrow your search
@@ -96,11 +131,13 @@ const KhutbaList = () => {
 
 							<div className='flex flex-col sm:flex-row gap-4 mt-8 md:max-w-[500px]'>
 								<Input
+									onChange={onSearchKhutbaInputChange}
+									value={khutbaSearchText}
 									className='bg-white text-black'
 									placeholder='Search Khutba'
 								/>
-
-								<Select>
+								{/* // TODO: hidden for now */}
+								{/* <Select>
 									<SelectTrigger className='bg-white text-black'>
 										<SelectValue placeholder='Select Khutba category' />
 									</SelectTrigger>
@@ -111,11 +148,29 @@ const KhutbaList = () => {
 										<SelectItem value='fiqh'>Fiqh</SelectItem>
 										<SelectItem value='prayer'>Prayer</SelectItem>
 									</SelectContent>
-								</Select>
+								</Select> */}
 							</div>
 
 							<div className='mt-20 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4'>
-								{khutbas &&
+								{filteredKhutbas.length > 0 &&
+									filteredKhutbas.map((k, i) => (
+										<Khutba
+											key={i}
+											id={k.id}
+											description={k.description}
+											category={k.category}
+											imageId={k.imageId}
+											title={k.title}
+											publishedOn={k.createdTimestamp}
+											imageUrl={k.imageUrl}
+											khutbaFirstPart={k.khutba_first_part}
+											khutbaSecondPart={k.khutba_second_part}
+										/>
+									))}
+
+								{filteredKhutbas.length < 1 &&
+									khutbaSearchText.length < 1 &&
+									khutbas &&
 									khutbas.length > 0 &&
 									khutbas.map((k, i) => (
 										<Khutba
@@ -125,7 +180,7 @@ const KhutbaList = () => {
 											category={k.category}
 											imageId={k.imageId}
 											title={k.title}
-											publishedOn={k.createdTimeStamp}
+											publishedOn={k.createdTimestamp}
 											imageUrl={k.imageUrl}
 											khutbaFirstPart={k.khutba_first_part}
 											khutbaSecondPart={k.khutba_second_part}
