@@ -21,7 +21,8 @@ One of the button code example:
 -  [x] Make single khutba page work
 -  [ ] Make download button work - added coming soon to it
 -  [x] Create contact us page
--  [ ] Create video page
+-  [x] Create video page
+-  [ ] Make the search khutba feature work
 -  [ ] Add the recording of the arabic texts in each khutba page
--  [ ] Make website responsive
+-  [x] Make website responsive
 -  [ ] Add state management (future)

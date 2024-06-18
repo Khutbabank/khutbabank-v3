@@ -31,7 +31,7 @@ const KhutbaGridItem = ({ title, description, id, imageUrl }: prop) => {
 					</h3>
 					<p className='text-black text-normal mt-3'>{description}</p>
 					<Link
-						className='text-primary font-bold flex items-center gap-1 text-xl mt-auto'
+						className='text-primary font-bold flex items-center gap-1 text-xl mt-auto hover:cursor-pointer'
 						href={`/khutba/${id}`}
 					>
 						Read Now

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
@@ -25,9 +27,11 @@ const HomePageAboutUs = () => {
 						love, coping with stress, evolution and others. We also
 						provide tips on how to effectively deliver a sermon.
 					</p>
-					<Button className='bg-primary text-white font-bold rounded-full mt-5 md:mt-24'>
-						Learn More About Us
-					</Button>
+					<Link href='/about-us'>
+						<Button className='bg-primary text-white font-bold rounded-full mt-5 md:mt-24'>
+							Learn More About Us
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</>

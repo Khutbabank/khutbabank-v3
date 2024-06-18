@@ -57,7 +57,7 @@ const Khutba = () => {
 
 	return (
 		<>
-			<div className='py-24 pt-20'>
+			<div className='py-24 pt-8 md:pt-14'>
 				{!loading ? (
 					error ? (
 						<p

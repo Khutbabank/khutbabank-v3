@@ -1,7 +1,7 @@
 const Description = () => {
 	return (
 		<>
-			<div className='flex flex-col md:flex-row md:justify-between md:items-center md:gap-20 md:pt-28 pt-12'>
+			<div className='flex flex-col gap-7 md:flex-row md:justify-between md:items-center md:gap-20 md:pt-28 pt-12'>
 				<div className='flex items-center justify-center bg-background px-8 md:pl-[100px] py-16'>
 					<h1 className='font-bold text-primary text-heading'>
 						Khutbah Scripts as Guidelines and Appreciation for Our

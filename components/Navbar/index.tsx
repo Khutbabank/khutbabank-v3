@@ -70,9 +70,12 @@ const Navbar = () => {
 					</DropdownMenuContent>
 				</DropdownMenu>
 
-				<Button className='bg-primary text-white font-bold rounded-full'>
-					Get Khutba
-				</Button>
+				{/* **TODO: get this button to get random khutbah */}
+				<Link href='/khutbas'>
+					<Button className='bg-primary text-white font-bold rounded-full'>
+						Get Khutba
+					</Button>
+				</Link>
 			</div>
 		</>
 	);
