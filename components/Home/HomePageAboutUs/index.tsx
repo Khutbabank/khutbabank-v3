@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 const HomePageAboutUs = () => {
 	return (
 		<>
-			<div className='bg-white flex items-center justify-between gap-20 py-[100px] px-8 md:px-[100px] md:gap-72'>
+			<div className='bg-white flex flex-col md:flex-row items-center justify-between gap-20 py-[100px] px-8 md:px-[100px] md:gap-72'>
 				<Image
 					src='/homePageAboutUs/books.png'
 					width={542}

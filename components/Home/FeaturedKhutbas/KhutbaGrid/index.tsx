@@ -3,7 +3,7 @@ import KhutbaGridItem from '../KhutbaGridItem';
 const KhutbaGrid = () => {
 	return (
 		<>
-			<div className='grid grid-cols-2 gap-8'>
+			<div className='grid md:grid-cols-2 gap-8'>
 				<KhutbaGridItem
 					imageUrl='/dummyImgs/khutba-cover-img.png'
 					title='Correct Belief'

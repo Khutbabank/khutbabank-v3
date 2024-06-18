@@ -6,7 +6,7 @@ const FeaturedKhutbas = () => {
 	return (
 		<>
 			<div className='flex flex-col gap-10 bg-white px-8 md:px-[100px] py-12 pb-20'>
-				<div className='flex justify-between items-center gap-4  '>
+				<div className='flex flex-col md:flex-row justify-between md:items-center gap-4  '>
 					<h1 className='text-heading text-primary font-bold'>
 						Featured Khutba
 					</h1>
@@ -14,6 +14,7 @@ const FeaturedKhutbas = () => {
 						All Khutbas
 					</Button>
 				</div>
+
 				<KhutbaGrid />
 			</div>
 		</>

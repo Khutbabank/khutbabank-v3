@@ -17,7 +17,7 @@ const HeroSection = () => {
 							src='/hero/quran.png'
 							width={888}
 							height={352}
-							className='w-full max-h-[352px] object-cover rounded-normal'
+							className='hidden md:block w-full max-h-[352px] object-cover rounded-normal'
 							alt='Quran'
 						/>
 						<div className='flex flex-col gap-7 justify-self-end md:max-w-[318px]'>
