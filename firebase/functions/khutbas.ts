@@ -41,14 +41,18 @@ export const getKhutbas = async () => {
 	return { result, error };
 };
 
-/* Limited to 5 khutbas */
+/* Limited to 4 khutbas */
 export const getLatestKhutbas = async () => {
 	let result = null;
 	let error = null;
 
 	try {
 		const khutbasRef = collection(db, 'khutbas');
-		const q = query(khutbasRef, orderBy('createdTimestamp'), limit(4));
+		const q = query(
+			khutbasRef,
+			orderBy('createdTimestamp', 'desc'),
+			limit(4),
+		);
 		const res = await getDocs(q);
 		result = [];
 
