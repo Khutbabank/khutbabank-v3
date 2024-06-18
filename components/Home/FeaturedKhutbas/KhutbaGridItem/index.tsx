@@ -16,20 +16,20 @@ interface prop {
 const KhutbaGridItem = ({ title, description, id, imageUrl }: prop) => {
 	return (
 		<>
-			<div className='flex flex-col gap-10 items-center p-5 md:flex-row border-[1px] border-dark-grey rounded-2xl'>
+			<div className='flex flex-col gap-10 p-5 xl:flex-row border-[1px] border-dark-grey rounded-2xl'>
 				<Image
 					src={imageUrl ? imageUrl : '/khutba/image.png'}
 					width={640}
-					height={260}
+					height={200}
 					alt='cover img'
-					className='rounded-2xl w-full h-full max-h-[15rem] max-w-[15rem] object-cover object-center'
+					className='rounded-2xl w-full h-full md:max-h-[15rem] xl:max-w-[15rem] object-cover object-center'
 				/>
 
 				<div className='flex flex-col h-full'>
 					<h3 className='text-sub-heading font-bold text-primary'>
 						{title}
 					</h3>
-					<p className='text-black text-normal mt-3'>{description}</p>
+					<p className='text-black text-normal mt-3 mb-7'>{description}</p>
 					<Link
 						className='text-primary font-bold flex items-center gap-1 text-xl mt-auto hover:cursor-pointer'
 						href={`/khutba/${id}`}

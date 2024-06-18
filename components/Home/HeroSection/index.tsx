@@ -7,13 +7,13 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
 	return (
 		<>
-			<div className='h-screen bg-background '>
+			<div className='flex flex-col bg-background '>
 				<Navbar />
-				<div className='mt-1 px-8 md:px-[100px] h-full'>
+				<div className='px-8 md:px-[100px] py-10 md:pt-5 md:py-24'>
 					<h1 className='font-semibold text-heading md:text-super-heading leading-tight text-primary break-words'>
 						Jummah Khutbas tailored for the Muslim Community
 					</h1>
-					<div className='flex justify-between items-center gap-14 mt-8'>
+					<div className='flex justify-between gap-14 mt-8'>
 						<Image
 							src='/hero/quran.png'
 							width={888}

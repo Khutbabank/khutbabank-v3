@@ -7,16 +7,16 @@ import { Button } from '@/components/ui/button';
 const HomePageAboutUs = () => {
 	return (
 		<>
-			<div className='bg-white flex flex-col md:flex-row items-center justify-between gap-16 py-[100px] px-8 md:px-[100px] md:gap-72'>
+			<div className='bg-white flex flex-col md:flex-row  justify-between gap-16 py-[100px] px-8 md:px-[100px] md:gap-32'>
 				<Image
 					src='/homePageAboutUs/books.png'
 					width={542}
 					height={707}
-					className='w-full max-h-[707px] object-cover rounded-normal'
+					className='w-full max-h-[707px] object-cover object-center rounded-normal'
 					alt='Quran'
 				/>
-				<div className='flex flex-col md:max-w-[540px]'>
-					<h1 className='text-heading font-bold text-primary'>
+				<div className='flex flex-col gap-8 md:gap-0 md:max-w-[540px]'>
+					<h1 className='text-heading font-bold text-primary leading-tight'>
 						Thousands of Muslims benefitted on daily basis
 					</h1>
 					<p className='text-normal text-black'>
