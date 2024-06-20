@@ -7,12 +7,12 @@ import { Button } from '@/components/ui/button';
 const HomePageAboutUs = () => {
 	return (
 		<>
-			<div className='bg-white flex flex-col lg:flex-row gap-16 py-[100px] px-8 md:px-[100px] lg:gap-20 xl:gap-32'>
+			<div className='bg-white flex flex-col lg:flex-row gap-10 py-[100px] px-8 md:px-[100px] lg:gap-20 xl:gap-32'>
 				<Image
 					src='/homePageAboutUs/books.png'
 					width={542}
 					height={707}
-					className='w-full max-h-[400px] md:max-h-[500px] lg:max-h-none lg:w-[450px] lg:max-w-[450px] xl:max-w-none xl:w-auto xl:max-h-[707px] object-cover object-center rounded-normal'
+					className='w-full max-h-[400px] md:max-h-[500px] lg:max-h-none lg:w-[450px] lg:max-w-[450px] xl:max-w-none xl:w-full xl:max-h-[707px] object-cover object-center rounded-normal'
 					alt='Quran'
 				/>
 				<div className='flex flex-col gap-4 lg:gap-10'>

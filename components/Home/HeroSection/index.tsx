@@ -13,15 +13,15 @@ const HeroSection = () => {
 					<h1 className='font-semibold text-heading md:text-super-heading leading-tight text-primary break-words'>
 						Jummah Khutbas tailored for the Muslim Community
 					</h1>
-					<div className='flex justify-between gap-14 mt-8'>
+					<div className='flex lg:justify-between gap-14 mt-8'>
 						<Image
 							src='/hero/quran.png'
 							width={888}
 							height={352}
-							className='hidden md:block md:w-[400px] md:max-w-[400px] lg:w-[600px] lg:max-w-[600px] xl:max-w-none xl:w-full max-h-[352px] object-cover rounded-normal'
+							className='hidden md:block md:w-[350px] md:max-w-[350px] lg:w-[600px] lg:max-w-[600px] xl:max-w-none xl:w-full max-h-[352px] object-cover rounded-normal'
 							alt='Quran'
 						/>
-						<div className='flex flex-col gap-7 justify-self-end md:max-w-[318px]'>
+						<div className='flex flex-col gap-7 justify-self-end lg:max-w-[318px]'>
 							<h3 className='font-bold text-3xl text-secondary'>
 								For Khateebs all around the world
 							</h3>
