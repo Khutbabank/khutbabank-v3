@@ -22,7 +22,7 @@ const KhutbaGridItem = ({ title, description, id, imageUrl }: prop) => {
 					width={640}
 					height={200}
 					alt='cover img'
-					className='rounded-2xl w-full h-full md:max-h-[15rem] xl:max-w-[15rem] object-cover object-center'
+					className='rounded-2xl w-full h-full md:max-h-[15rem] xl:max-h-none xl:max-w-[15rem] object-cover object-center'
 				/>
 
 				<div className='flex flex-col h-full'>
