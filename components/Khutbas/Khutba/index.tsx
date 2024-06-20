@@ -40,7 +40,7 @@ const Khutba = ({
 					width={400}
 					height={400}
 					alt='thumbnail'
-					className='rounded-2xl w-full h-full max-h-[22rem] max-w-[30rem] object-cover object-center'
+					className='rounded-2xl w-full h-[15rem] max-h-[15rem] object-cover object-center'
 				/>
 
 				<div className='flex flex-col gap-4 mt-6 mb-6'>
@@ -71,7 +71,7 @@ const Khutba = ({
 					</div>
 				</div>
 
-				<div className='flex gap-5 mt-10 w-full'>
+				<div className='flex flex-wrap gap-3 xl:flex-nowrap xl:gap-5 mt-10 w-full'>
 					<Link href={`/khutba/${id}`} className='w-full'>
 						<Button className='flex items-center justify-center gap-3 bg-primary text-white w-full'>
 							<i className='text-white text-xl ri-book-open-fill' />
