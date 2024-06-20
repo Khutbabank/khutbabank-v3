@@ -40,7 +40,7 @@ const Navbar = () => {
 					/>
 				</Link>
 
-				<div className='hidden md:flex gap-5 items-center mx-auto'>
+				<div className='hidden lg:flex gap-5 items-center mx-auto'>
 					{links.map((link, i) => (
 						<Link
 							className='text-black text-normal hover:underline'
@@ -53,10 +53,10 @@ const Navbar = () => {
 				</div>
 
 				<DropdownMenu>
-					<DropdownMenuTrigger className='block md:hidden ml-auto mr-6'>
+					<DropdownMenuTrigger className='block lg:hidden ml-auto mr-6'>
 						<i className='ri-menu-fill text-4xl text-black font-bold' />
 					</DropdownMenuTrigger>
-					<DropdownMenuContent className='block md:hidden'>
+					<DropdownMenuContent className='block lg:hidden'>
 						{links.map((l, i) => (
 							<DropdownMenuItem key={i} className='py-3'>
 								<Link

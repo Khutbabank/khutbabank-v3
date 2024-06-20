@@ -9,7 +9,7 @@ const HeroSection = () => {
 		<>
 			<div className='flex flex-col bg-background '>
 				<Navbar />
-				<div className='px-8 md:px-[100px] py-10 md:pt-5 md:py-24'>
+				<div className='px-8 md:px-[100px] py-10 pb-[100px] md:pt-5 md:py-24'>
 					<h1 className='font-semibold text-heading md:text-super-heading leading-tight text-primary break-words'>
 						Jummah Khutbas tailored for the Muslim Community
 					</h1>
@@ -18,7 +18,7 @@ const HeroSection = () => {
 							src='/hero/quran.png'
 							width={888}
 							height={352}
-							className='hidden md:block w-full max-h-[352px] object-cover rounded-normal'
+							className='hidden md:block md:w-[400px] md:max-w-[400px] lg:w-[600px] lg:max-w-[600px] xl:max-w-none xl:w-full max-h-[352px] object-cover rounded-normal'
 							alt='Quran'
 						/>
 						<div className='flex flex-col gap-7 justify-self-end md:max-w-[318px]'>
