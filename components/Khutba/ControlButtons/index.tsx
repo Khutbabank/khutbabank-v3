@@ -38,6 +38,8 @@ const ControlButtons = ({
 							checked={isShortKhutbaChecked}
 							onClick={() => {
 								setIsShortKhutbaChecked(!isShortKhutbaChecked);
+								setIsMediumKhutbaChecked(false);
+								setIsLongKhutbaChecked(false);
 							}}
 						/>
 						<Label htmlFor='short-khutba-toggle' className='text-black'>
@@ -51,7 +53,9 @@ const ControlButtons = ({
 							id='medium-khutba-toggle'
 							checked={isMediumKhutbaChecked}
 							onClick={() => {
+								setIsShortKhutbaChecked(false);
 								setIsMediumKhutbaChecked(!isMediumKhutbaChecked);
+								setIsLongKhutbaChecked(false);
 							}}
 						/>
 						<Label htmlFor='medium-khutba-toggle' className='text-black'>
@@ -65,6 +69,8 @@ const ControlButtons = ({
 							id='long-khutba-toggle'
 							checked={isLongKhutbaChecked}
 							onClick={() => {
+								setIsShortKhutbaChecked(false);
+								setIsMediumKhutbaChecked(false);
 								setIsLongKhutbaChecked(!isLongKhutbaChecked);
 							}}
 						/>
