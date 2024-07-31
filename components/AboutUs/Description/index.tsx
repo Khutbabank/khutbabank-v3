@@ -4,7 +4,7 @@ const Description = () => {
 			<div className='flex flex-col gap-7 lg:flex-row lg:justify-between lg:items-center lg:gap-16'>
 				<div className='flex items-center justify-center bg-background px-8 md:px-[100px] lg:px-0 lg:pr-10 lg:pl-[100px] py-16'>
 					<h1 className='font-bold text-primary text-heading'>
-						Khutbah Scripts as Guidelines and Appreciation for Our
+						Khutba Scripts as Guidelines and Appreciation for Our
 						Dedicated Contributors
 					</h1>
 				</div>
