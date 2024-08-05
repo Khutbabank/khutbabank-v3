@@ -34,21 +34,33 @@ const Content = ({
 				</h1>
 
 				{isShortKhutbaChecked && (
-					<pre className=' break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
-						{defaultTexts.shortKhutba.beginning}
-					</pre>
+					<div className='flex flex-col items-center gap-10 my-9'>
+						<audio controls src='/audios/hajaah-short.m4a'></audio>
+
+						<pre className=' break-words whitespace-pre-wrap text-black text-2xl text-center'>
+							{defaultTexts.shortKhutba.beginning}
+						</pre>
+					</div>
 				)}
 
 				{isMediumKhutbaChecked && (
-					<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
-						{defaultTexts.mediumKhutba.beginning}
-					</pre>
+					<div className='flex flex-col items-center gap-10 my-9'>
+						<audio controls src='/audios/hajaah-medium.m4a'></audio>
+
+						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
+							{defaultTexts.mediumKhutba.beginning}
+						</pre>
+					</div>
 				)}
 
 				{isLongKhutbaChecked && (
-					<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
-						{defaultTexts.longKhutba.beginning}
-					</pre>
+					<div className='flex flex-col items-center gap-10 my-9'>
+						<audio controls src='/audios/hajaah-long.m4a'></audio>
+
+						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
+							{defaultTexts.longKhutba.beginning}
+						</pre>
+					</div>
 				)}
 
 				<pre className='text-black text-normal overflow-hidden break-normal whitespace-pre-wrap'>
