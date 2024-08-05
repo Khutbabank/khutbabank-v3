@@ -16,7 +16,7 @@ const ContactUs = () => {
 					We want to make sure that you have the best experience and
 					delivery when using the Khutba Bank. If there is any feedback
 					that you have, feel free to contact as by emailing
-					khutbabank1@gmail.com.
+					<b> khutbabank1@gmail.com</b>.
 				</p>
 				<Link href='/khutbas'>
 					<Button className='bg-primary text-white font-bold rounded-full mt-14 py-6'>
