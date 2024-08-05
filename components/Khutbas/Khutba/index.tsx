@@ -43,12 +43,12 @@ const Khutba = ({
 					className='rounded-2xl w-full h-[15rem] max-h-[15rem] object-cover object-center'
 				/>
 
-				<div className='flex flex-col gap-4 mt-6 mb-6'>
+				<div className='flex flex-col gap-4 mt-6'>
 					<p className='text-normal font-bold text-black'>{title}</p>
 					<p className='text-small text-black'>{description}</p>
 				</div>
 
-				<div className='h-[0.1px] border-[1px] border-dark-grey my-4 mt-auto' />
+				{/* <div className='h-[0.1px] border-[1px] border-dark-grey my-4 mt-auto' />
 
 				<div className='flex gap-4 justify-between'>
 					<div className='flex flex-col gap-1'>
@@ -69,7 +69,7 @@ const Khutba = ({
 							}/${publishedOn.toDate().getFullYear()}`}
 						</p>
 					</div>
-				</div>
+				</div> */}
 
 				<div className='flex flex-wrap gap-3 xl:flex-nowrap xl:gap-5 mt-10 w-full'>
 					<Link href={`/khutba/${id}`} className='w-full'>
