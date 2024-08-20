@@ -114,7 +114,7 @@ const KhutbaList = () => {
 	return (
 		<>
 			<div className='flex flex-col px-8 md:px-[100px] py-24 pt-20'>
-				<h1 className='text-primary text-heading font-bold'>
+				<h1 className='text-primary text-heading font-bold leading-title'>
 					Browse the Khutba bank
 				</h1>
 				{!loading ? (

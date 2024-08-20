@@ -5,7 +5,7 @@ const BrowseVideoBank = () => {
 	return (
 		<>
 			<div className='bg-primary flex flex-col items-center justify-center py-28 px-8 md:px-[100px] mt-10 md:mt-0'>
-				<h1 className='text-white text-super-heading font-bold text-center'>
+				<h1 className='text-white text-super-heading font-bold text-center leading-title'>
 					Video Bank
 				</h1>
 				<p className='text-normal text-white mt-5 text-center'>

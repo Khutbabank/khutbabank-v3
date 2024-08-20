@@ -16,7 +16,7 @@ const HomePageAboutUs = () => {
 					alt='Quran'
 				/>
 				<div className='flex flex-col gap-4 lg:gap-10'>
-					<h1 className='text-heading font-bold text-primary leading-tight'>
+					<h1 className='text-heading font-bold text-primary leading-title'>
 						Thousands of Muslims benefited on daily basis
 					</h1>
 					<p className='text-normal text-black'>

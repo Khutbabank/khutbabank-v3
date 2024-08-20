@@ -38,10 +38,10 @@ const Videos = () => {
 	return (
 		<>
 			<div className='px-8 md:px-[100px] py-9'>
-				<h1 className='text-heading text-primary font-bold'>
+				<h1 className='text-heading text-primary font-bold leading-title'>
 					Khutbabank Videos
 				</h1>
-				<h2 className='text-sub-heading text-secondary font-bold'>
+				<h2 className='text-sub-heading text-secondary font-bold mt-3'>
 					Find the educational videos below
 				</h2>
 				<div className='flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-10 justify-center mt-10'>

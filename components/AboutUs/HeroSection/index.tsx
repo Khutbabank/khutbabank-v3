@@ -12,7 +12,9 @@ const HeroSection = () => {
 					alt='books'
 				/>
 				<div className='flex flex-col'>
-					<h1 className='text-heading text-primary font-bold'>About Us</h1>
+					<h1 className='text-heading text-primary font-bold leading-title'>
+						About Us
+					</h1>
 					<p className='text-black text-normal mt-5'>
 						Khutba Bank aims to help improve khutbas delivered worldwide.
 						We provide high-quality khutba scripts for schools,

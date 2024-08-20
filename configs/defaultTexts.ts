@@ -12,6 +12,8 @@ const defaultTexts = {
 			'الْحَمْدُ لِلَّهِ، وَالصَّلَاةُ وَالسَّلَامُ عَلَىٰ رَسُولِ اللهِ، رَبَّنَآ اٰتِنَا فِىْ الدُّنْيَا حَسَنَةً وَّفِىْ الْاٰخِرَةِ حَسَنَةً وَّقِنَا عَذَابَ النَّارِ وَأَقِيمُوا الصَّلَاة',
 		ending:
 			'رَبَّنَآ اٰتِنَا فِىْ الدُّنْيَا حَسَنَةً وَّفِىْ الْاٰخِرَةِ حَسَنَةً وَّقِنَا عَذَابَ النَّارِ وَأَقِيمُوا الصَّلَاة',
+		beginningTranslation:
+			'In the name of Allah, praise be to Allah, and may blessings and peace be upon the Messenger of Allah, now then:',
 	},
 	mediumKhutba: {
 		beginning:

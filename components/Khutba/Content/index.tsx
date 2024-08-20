@@ -29,7 +29,7 @@ const Content = ({
 				className={`flex flex-col mt-7 ${paddingClassNames}`}
 				ref={componentRef}
 			>
-				<h1 className='text-heading text-primary font-bold mb-5'>
+				<h1 className='text-heading text-primary font-bold mb-5 leading-title'>
 					{title}
 				</h1>
 

@@ -1,15 +1,14 @@
 const Description = () => {
 	return (
 		<>
-			<div className='flex flex-col gap-7 lg:flex-row lg:justify-between lg:items-center lg:gap-16'>
-				<div className='flex items-center justify-center bg-background px-8 md:px-[100px] lg:px-0 lg:pr-10 lg:pl-[100px] py-16'>
-					<h1 className='font-bold text-primary text-heading'>
-						Khutba Scripts as Guidelines and Appreciation for Our
-						Dedicated Contributors
+			<div className='flex flex-col gap-7 lg:flex-row lg:justify-between lg:gap-16'>
+				<div className='flex items-center justify-center bg-background px-8 md:pb-[100px] md:px-[100px] md:h-full lg:px-0 lg:pr-10 lg:pl-[100px] py-16'>
+					<h1 className='font-bold text-primary text-heading leading-title'>
+						A Guide and Appreciation for Our Dedicated Contributors
 					</h1>
 				</div>
 
-				<div className='flex flex-col px-8 md:px-[100px] pb-[100px] lg:px-0 lg:pr-[100px]'>
+				<div className='flex flex-col px-8 md:px-[100px] pb-[100px] md:pb-0 lg:px-0 lg:pr-[100px]'>
 					<p className='text-black text-normal mt-5'>
 						The khutba scripts are to be taken purely as guidelines. An
 						individual delivering a khutba can alter the scripts to fit

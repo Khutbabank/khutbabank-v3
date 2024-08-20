@@ -9,8 +9,8 @@ const HeroSection = () => {
 		<>
 			<div className='flex flex-col bg-background '>
 				<Navbar />
-				<div className='px-8 md:px-[100px] py-10 pb-[100px] md:pt-5 md:py-24'>
-					<h1 className='font-semibold text-heading md:text-super-heading leading-tight text-primary break-words'>
+				<div className='px-8 md:px-[100px] pt-4 pb-[100px] md:pt-5 md:py-24'>
+					<h1 className='font-semibold text-heading md:text-super-heading leading-title text-primary break-words'>
 						Jummah Khutbas tailored for the Muslim Community
 					</h1>
 					<div className='flex lg:justify-between gap-14 mt-8'>
@@ -25,7 +25,7 @@ const HeroSection = () => {
 							<h3 className='font-bold text-3xl text-secondary'>
 								For Khateebs all around the world
 							</h3>
-							<p className='text-black text-lg'>
+							<p className='hidden md:block text-black text-lg'>
 								Khutba Bank has regularly provided high-quality khutba
 								scripts for schools, universities, youth circles,
 								mosques and work places.
