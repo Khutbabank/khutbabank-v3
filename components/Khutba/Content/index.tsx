@@ -89,41 +89,34 @@ const Content = ({
 					<h2 className='text-secondary font-medium text-sub-heading'>
 						Second Part
 					</h2>
-
 					{isShortKhutbaChecked && (
 						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
 							{defaultTexts.shortKhutba.middle2}
 						</pre>
 					)}
-
 					{isMediumKhutbaChecked && (
 						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
 							{defaultTexts.mediumKhutba.middle2}
 						</pre>
 					)}
-
 					{isLongKhutbaChecked && (
 						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
 							{defaultTexts.longKhutba.middle2}
 						</pre>
 					)}
-
-					<pre className='text-black text-normal overflow-hidden break-words whitespace-pre-wraps mt-3'>
+					<pre className='text-black text-normal overflow-hidden break-words whitespace-pre-wrap mt-3'>
 						{secondPart}
 					</pre>
-
 					{isShortKhutbaChecked && (
 						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
 							{defaultTexts.shortKhutba.ending}
 						</pre>
 					)}
-
 					{isMediumKhutbaChecked && (
 						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
 							{defaultTexts.mediumKhutba.ending}
 						</pre>
 					)}
-
 					{isLongKhutbaChecked && (
 						<pre className='overflow-hidden break-words whitespace-pre-wrap text-black text-2xl text-center my-9'>
 							{defaultTexts.longKhutba.ending}
