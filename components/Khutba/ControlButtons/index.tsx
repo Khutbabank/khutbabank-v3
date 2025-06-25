@@ -1,8 +1,9 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
 
 interface Props {
 	isShortKhutbaChecked: boolean;
@@ -29,6 +30,8 @@ const ControlButtons = ({
 	handlePrint,
 	paddingClassNames,
 }: Props) => {
+	const [size, setSize] = useState(16);
+
 	return (
 		<>
 			<div
@@ -97,6 +100,22 @@ const ControlButtons = ({
 						<Label htmlFor='high-contrast-toggle' className='text-black'>
 							High Contrast
 						</Label>
+					</div>
+				</div>
+
+				<div className='flex items-center justify-center gap-3 mx-auto w-full'>
+					<div className='flex items-center space-x-2 w-6/12'>
+						<p className='text-black text-xs font-medium'>Aa</p>
+						<Slider
+							id='font-size-slider'
+							min={12}
+							max={24}
+							step={1}
+							value={[size]}
+							onValueChange={(val) => setSize(val[0])}
+							aria-label='Adjust text size'
+						/>
+						<p className='text-black font-medium'>Aa</p>
 					</div>
 				</div>
 
