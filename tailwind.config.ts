@@ -26,6 +26,12 @@ const config = {
 				background: '#F8EDDA',
 				'light-black': '#999999',
 				'dark-grey': '#B7B3B3',
+				'high-contrast': {
+					background: '#000', // Dark gray
+					text: '#ffffff', // White
+					primary: '#ffcc00', // Bright yellow
+					secondary: '#0077cc', // Bright blue
+				},
 			},
 			fontSize: {
 				'side-heading': '95px',

@@ -19,6 +19,8 @@ const Khutba = () => {
 		useState<boolean>(false);
 	const [isLongKhutbaChecked, setIsLongKhutbaChecked] =
 		useState<boolean>(false);
+	const [isHighContrastChecked, setIsHighContrastChecked] =
+		useState<boolean>(false);
 	const [khutba, setKhutba] = useState<{
 		category: string;
 		description: string;
@@ -74,9 +76,11 @@ const Khutba = () => {
 									isShortKhutbaChecked={isShortKhutbaChecked}
 									isMediumKhutbaChecked={isMediumKhutbaChecked}
 									isLongKhutbaChecked={isLongKhutbaChecked}
+									isHighContrastChecked={isHighContrastChecked}
 									setIsShortKhutbaChecked={setIsShortKhutbaChecked}
 									setIsMediumKhutbaChecked={setIsMediumKhutbaChecked}
 									setIsLongKhutbaChecked={setIsLongKhutbaChecked}
+									setIsHighContrastChecked={setIsHighContrastChecked}
 									paddingClassNames={paddingClassNames}
 								/>
 								<Content
@@ -85,6 +89,7 @@ const Khutba = () => {
 									isShortKhutbaChecked={isShortKhutbaChecked}
 									isMediumKhutbaChecked={isMediumKhutbaChecked}
 									isLongKhutbaChecked={isLongKhutbaChecked}
+									isHighContrastChecked={isHighContrastChecked}
 									title={khutba?.title}
 									firstPart={khutba?.khutba_first_part}
 									secondPart={khutba?.khutba_second_part}

@@ -8,9 +8,11 @@ interface Props {
 	isShortKhutbaChecked: boolean;
 	isMediumKhutbaChecked: boolean;
 	isLongKhutbaChecked: boolean;
+	isHighContrastChecked: boolean;
 	setIsShortKhutbaChecked: Dispatch<SetStateAction<boolean>>;
 	setIsMediumKhutbaChecked: Dispatch<SetStateAction<boolean>>;
 	setIsLongKhutbaChecked: Dispatch<SetStateAction<boolean>>;
+	setIsHighContrastChecked: Dispatch<SetStateAction<boolean>>;
 	handlePrint: unknown | any; // todo: please type this proper
 	paddingClassNames: string;
 }
@@ -19,9 +21,11 @@ const ControlButtons = ({
 	isShortKhutbaChecked,
 	isMediumKhutbaChecked,
 	isLongKhutbaChecked,
+	isHighContrastChecked,
 	setIsShortKhutbaChecked,
 	setIsMediumKhutbaChecked,
 	setIsLongKhutbaChecked,
+	setIsHighContrastChecked,
 	handlePrint,
 	paddingClassNames,
 }: Props) => {
@@ -76,6 +80,20 @@ const ControlButtons = ({
 						/>
 						<Label htmlFor='long-khutba-toggle' className='text-black'>
 							Long Khutba
+						</Label>
+					</div>
+
+					<div className='flex items-center space-x-2'>
+						<Switch
+							className='data-[state=checked]:bg-primary'
+							id='high-contrast-toggle'
+							checked={isHighContrastChecked}
+							onClick={() => {
+								setIsHighContrastChecked((prev) => !prev);
+							}}
+						/>
+						<Label htmlFor='high-contrast-toggle' className='text-black'>
+							High Contrast
 						</Label>
 					</div>
 				</div>
