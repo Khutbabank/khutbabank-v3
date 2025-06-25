@@ -82,7 +82,9 @@ const ControlButtons = ({
 							Long Khutba
 						</Label>
 					</div>
+				</div>
 
+				<div className='flex items-center justify-center gap-3 mx-auto w-full'>
 					<div className='flex items-center space-x-2'>
 						<Switch
 							className='data-[state=checked]:bg-primary'
