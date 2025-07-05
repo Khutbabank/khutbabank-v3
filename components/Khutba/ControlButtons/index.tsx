@@ -16,6 +16,8 @@ interface Props {
 	setIsHighContrastChecked: Dispatch<SetStateAction<boolean>>;
 	handlePrint: unknown | any; // todo: please type this proper
 	paddingClassNames: string;
+	khutbaContentFontSize: number;
+	setKhutbaContentFontSize: Dispatch<SetStateAction<number>>;
 }
 
 const ControlButtons = ({
@@ -27,8 +29,10 @@ const ControlButtons = ({
 	setIsMediumKhutbaChecked,
 	setIsLongKhutbaChecked,
 	setIsHighContrastChecked,
+	setKhutbaContentFontSize,
 	handlePrint,
 	paddingClassNames,
+	khutbaContentFontSize,
 }: Props) => {
 	const [size, setSize] = useState(16);
 
@@ -108,11 +112,14 @@ const ControlButtons = ({
 						<p className='text-black text-xs font-medium'>Aa</p>
 						<Slider
 							id='font-size-slider'
-							min={12}
-							max={24}
+							min={0}
+							max={60}
 							step={1}
-							value={[size]}
-							onValueChange={(val) => setSize(val[0])}
+							value={[khutbaContentFontSize]}
+							onValueChange={(val) => {
+								console.log(val[0]);
+								setKhutbaContentFontSize(val[0]);
+							}}
 							aria-label='Adjust text size'
 						/>
 						<p className='text-black font-medium'>Aa</p>

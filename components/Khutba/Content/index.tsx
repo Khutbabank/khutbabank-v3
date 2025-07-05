@@ -12,6 +12,7 @@ interface Props {
 	isHighContrastChecked: boolean;
 	componentRef: MutableRefObject<null>;
 	paddingClassNames: string;
+	khutbaContentFontSize: number;
 }
 
 const Content = ({
@@ -24,6 +25,7 @@ const Content = ({
 	isHighContrastChecked,
 	componentRef,
 	paddingClassNames,
+	khutbaContentFontSize,
 }: Props) => {
 	return (
 		<>
@@ -39,6 +41,13 @@ const Content = ({
 							? 'text-high-contrast-primary'
 							: 'text-primary'
 					}`}
+					style={{
+						fontSize: `${
+							khutbaContentFontSize > 0
+								? `${50 + khutbaContentFontSize}px`
+								: '50px'
+						} `,
+					}}
 				>
 					{title}
 				</h1>
@@ -48,11 +57,18 @@ const Content = ({
 						<audio controls src='/audios/hajaah-short.m4a'></audio>
 
 						<pre
-							className={`break-words whitespace-pre-wrap  text-2xl text-center ${
+							className={`break-words whitespace-pre-wrap text-2xl text-center ${
 								isHighContrastChecked
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.shortKhutba.beginning}
 						</pre>
@@ -69,6 +85,13 @@ const Content = ({
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.mediumKhutba.beginning}
 						</pre>
@@ -85,6 +108,13 @@ const Content = ({
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.longKhutba.beginning}
 						</pre>
@@ -97,6 +127,13 @@ const Content = ({
 							? 'text-high-contrast-text'
 							: 'text-black'
 					}`}
+					style={{
+						fontSize: `${
+							khutbaContentFontSize > 0
+								? `${18 + khutbaContentFontSize}px`
+								: '18px'
+						} `,
+					}}
 				>
 					{firstPart}
 				</pre>
@@ -108,6 +145,13 @@ const Content = ({
 								? 'text-high-contrast-text'
 								: 'text-black'
 						}`}
+						style={{
+							fontSize: `${
+								khutbaContentFontSize > 0
+									? `${24 + khutbaContentFontSize}px`
+									: '24px'
+							} `,
+						}}
 					>
 						{defaultTexts.shortKhutba.middle1}
 					</pre>
@@ -120,6 +164,13 @@ const Content = ({
 								? 'text-high-contrast-text'
 								: 'text-black'
 						}`}
+						style={{
+							fontSize: `${
+								khutbaContentFontSize > 0
+									? `${24 + khutbaContentFontSize}px`
+									: '24px'
+							} `,
+						}}
 					>
 						{defaultTexts.mediumKhutba.middle1}
 					</pre>
@@ -132,13 +183,29 @@ const Content = ({
 								? 'text-high-contrast-text'
 								: 'text-black'
 						}`}
+						style={{
+							fontSize: `${
+								khutbaContentFontSize > 0
+									? `${24 + khutbaContentFontSize}px`
+									: '24px'
+							} `,
+						}}
 					>
 						{defaultTexts.longKhutba.middle1}
 					</pre>
 				)}
 
 				<div className='flex flex-col mt-5'>
-					<h2 className='text-secondary font-medium text-sub-heading'>
+					<h2
+						className='text-secondary font-medium text-sub-heading'
+						style={{
+							fontSize: `${
+								khutbaContentFontSize > 0
+									? `${30 + khutbaContentFontSize}px`
+									: '30px'
+							} `,
+						}}
+					>
 						Second Part
 					</h2>
 					{isShortKhutbaChecked && (
@@ -148,6 +215,13 @@ const Content = ({
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.shortKhutba.middle2}
 						</pre>
@@ -159,17 +233,31 @@ const Content = ({
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.mediumKhutba.middle2}
 						</pre>
 					)}
 					{isLongKhutbaChecked && (
 						<pre
-							className={`overflow-hidden break-words whitespace-pre-wrap  text-2xl text-center my-9 ${
+							className={`overflow-hidden break-words whitespace-pre-wrap text-2xl text-center my-9 ${
 								isHighContrastChecked
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.longKhutba.middle2}
 						</pre>
@@ -180,6 +268,13 @@ const Content = ({
 								? 'text-high-contrast-text'
 								: 'text-black'
 						}`}
+						style={{
+							fontSize: `${
+								khutbaContentFontSize > 0
+									? `${18 + khutbaContentFontSize}px`
+									: '18px'
+							} `,
+						}}
 					>
 						{secondPart}
 					</pre>
@@ -190,6 +285,13 @@ const Content = ({
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.shortKhutba.ending}
 						</pre>
@@ -201,6 +303,13 @@ const Content = ({
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.mediumKhutba.ending}
 						</pre>
@@ -212,6 +321,13 @@ const Content = ({
 									? 'text-high-contrast-text'
 									: 'text-black'
 							}`}
+							style={{
+								fontSize: `${
+									khutbaContentFontSize > 0
+										? `${24 + khutbaContentFontSize}px`
+										: '24px'
+								} `,
+							}}
 						>
 							{defaultTexts.longKhutba.ending}
 						</pre>

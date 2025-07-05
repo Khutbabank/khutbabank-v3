@@ -32,6 +32,8 @@ const Khutba = () => {
 		khutba_first_part: string;
 		khutba_second_part: string;
 	}>();
+	const [khutbaContentFontSize, setKhutbaContentFontSize] =
+		useState<number>(0);
 
 	const params = useParams<{ id: string }>();
 
@@ -81,6 +83,8 @@ const Khutba = () => {
 									setIsMediumKhutbaChecked={setIsMediumKhutbaChecked}
 									setIsLongKhutbaChecked={setIsLongKhutbaChecked}
 									setIsHighContrastChecked={setIsHighContrastChecked}
+									setKhutbaContentFontSize={setKhutbaContentFontSize}
+									khutbaContentFontSize={khutbaContentFontSize}
 									paddingClassNames={paddingClassNames}
 								/>
 								<Content
@@ -93,6 +97,7 @@ const Khutba = () => {
 									title={khutba?.title}
 									firstPart={khutba?.khutba_first_part}
 									secondPart={khutba?.khutba_second_part}
+									khutbaContentFontSize={khutbaContentFontSize}
 								/>
 							</>
 						)
