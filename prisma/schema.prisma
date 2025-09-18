@@ -10,7 +10,7 @@ generator client {
 model Khutba {
   id            String   @id @default(uuid())
   createdAt     DateTime @default(now())
-  author        String
+  author        String?
   title         String
   categoryId    String
   firstPart     String
