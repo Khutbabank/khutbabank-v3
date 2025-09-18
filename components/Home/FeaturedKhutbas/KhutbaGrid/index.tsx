@@ -1,77 +1,81 @@
-'use client';
+// 'use client';
 
-import { useState, useEffect } from 'react';
-import { getLatestKhutbas, getKhutbaImage } from '@/firebase/functions/khutbas';
+// import { useState, useEffect } from 'react';
+// import { getLatestKhutbas, getKhutbaImage } from '@/firebase/functions/khutbas';
+import { getLatestKhutbas } from '@/prisma/functions/khutbas';
 
 import KhutbaGridItem from '../KhutbaGridItem';
 
-const KhutbaGrid = () => {
-	const [khutbas, setKhutbas] = useState<
-		Array<{
-			category: string;
-			description: string;
-			id: string;
-			imageId: string;
-			title: string;
-			createdTimeStamp: string;
-			imageUrl: string | null;
-			khutba_first_part: string;
-			khutba_second_part: string;
-		}>
-	>();
-	const [loading, setLoading] = useState<boolean>(true);
-	const [error, setError] = useState<boolean>(false);
+const KhutbaGrid = async () => {
+	// const [khutbas, setKhutbas] = useState<
+	// 	Array<{
+	// 		id: string;
+	// 		createdAt: Date;
+	// 		author: string | null;
+	// 		title: string;
+	// 		description: string;
+	// 		categoryId: string;
+	// 		firstPart: string;
+	// 		secondPart: string;
+	// 		thumbnailPath: string;
+	// 	}>
+	// >();
+	// const [loading, setLoading] = useState<boolean>(true);
+	// const [error, setError] = useState<boolean>(false);
 
-	useEffect(() => {
-		const getData = async () => {
-			const data = await getLatestKhutbas();
+	const { result: khutbas, error } = await getLatestKhutbas();
 
-			if (data.result) {
-				// @ts-ignore - I had no choice
-				const khutbasWithImages = data.result.map((khutba: any) => ({
-					...khutba,
-					imageUrl: null,
-				}));
+	// useEffect(() => {
+	// 	const getData = async () => {
+	// 		const data = await getLatestKhutbas();
+	// 		console.log(data);
 
-				setKhutbas(data.result);
-				setLoading(false);
+	// 		if (data.result) {
+	// 			// @ts-ignore - I had no choice
+	// 			// const khutbasWithImages = data.result.map((khutba: any) => ({
+	// 			// 	...khutba,
+	// 			// 	imageUrl: null,
+	// 			// }));
 
-				const imagePromises = khutbasWithImages.map(
-					async (khutba, index) => {
-						const imageData = await getKhutbaImage({
-							imageId: khutba.imageId,
-						});
+	// 			setKhutbas(data.result);
+	// 			setLoading(false);
 
-						if (imageData.result) {
-							setKhutbas((prevKhutbas: any) =>
-								prevKhutbas.map((k: any, i: any) =>
-									i === index
-										? { ...k, imageUrl: imageData.result }
-										: k,
-								),
-							);
-						}
-					},
-				);
+	// 			// const imagePromises = khutbasWithImages.map(
+	// 			// 	async (khutba, index) => {
+	// 			// 		const imageData = await getKhutbaImage({
+	// 			// 			imageId: khutba.imageId,
+	// 			// 		});
 
-				await Promise.all(imagePromises);
+	// 			// 		if (imageData.result) {
+	// 			// 			setKhutbas((prevKhutbas: any) =>
+	// 			// 				prevKhutbas.map((k: any, i: any) =>
+	// 			// 					i === index
+	// 			// 						? { ...k, imageUrl: imageData.result }
+	// 			// 						: k,
+	// 			// 				),
+	// 			// 			);
+	// 			// 		}
+	// 			// 	},
+	// 			// );
 
-				return;
-			}
+	// 			// await Promise.all(imagePromises);
 
-			if (data.error) {
-				setError(true);
-				setLoading(false);
-			}
-		};
+	// 			return;
+	// 		}
 
-		getData();
-	}, []);
+	// 		if (data.error) {
+	// 			setError(true);
+	// 			setLoading(false);
+	// 		}
+	// 	};
+
+	// 	getData();
+	// }, []);
 
 	return (
 		<>
 			<div className='grid md:grid-cols-2 gap-8'>
-				{!loading ? (
+				{/* {!loading ? (
 					khutbas &&
 					khutbas.length > 0 &&
 					khutbas.map((k, i) => (
@@ -79,18 +83,30 @@ const KhutbaGrid = () => {
 							key={i}
 							id={k.id}
 							description={k.description}
-							category={k.category}
-							imageId={k.imageId}
+							category={'Unknown'} // TODO: fix this
 							title={k.title}
-							publishedOn={k.createdTimeStamp}
-							imageUrl={k.imageUrl}
-							khutbaFirstPart={k.khutba_first_part}
-							khutbaSecondPart={k.khutba_second_part}
+							imageUrl={`${process.env.NEXT_PUBLIC_THUMBNAIL_URL}/${k.thumbnailPath}`}
+							khutbaFirstPart={k.firstPart}
+							khutbaSecondPart={k.secondPart}
 						/>
 					))
 				) : (
 					<p className='text-black font-bold text-xl mt-3'>Loading ...</p>
-				)}
+				)} */}
+				{khutbas &&
+					khutbas.length > 0 &&
+					khutbas.map((k, i) => (
+						<KhutbaGridItem
+							key={i}
+							id={k.id}
+							description={k.description}
+							category={'Unknown'} // TODO: fix this
+							title={k.title}
+							imageUrl={`${process.env.NEXT_PUBLIC_THUMBNAIL_URL}/${k.thumbnailPath}.png`}
+							khutbaFirstPart={k.firstPart}
+							khutbaSecondPart={k.secondPart}
+						/>
+					))}
 			</div>
 		</>
 	);

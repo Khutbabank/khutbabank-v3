@@ -5,9 +5,7 @@ interface prop {
 	category: string;
 	description: string;
 	id: string;
-	imageId: string;
 	title: string;
-	publishedOn: string;
 	imageUrl: string | null;
 	khutbaFirstPart: string;
 	khutbaSecondPart: string;
@@ -29,7 +27,9 @@ const KhutbaGridItem = ({ title, description, id, imageUrl }: prop) => {
 					<h3 className='text-sub-heading font-bold text-primary'>
 						{title}
 					</h3>
-					<p className='text-black text-normal mt-3 mb-7'>{description}</p>
+					<p className='text-black text-normal mt-3 mb-7 max-h[82px] overflow-hidden text-ellipsis'>
+						{description}
+					</p>
 					<Link
 						className='text-primary font-bold flex items-center gap-1 text-xl mt-auto hover:cursor-pointer'
 						href={`/khutba/${id}`}

@@ -12,6 +12,7 @@ model Khutba {
   createdAt     DateTime @default(now())
   author        String?
   title         String
+  description   String
   categoryId    String
   firstPart     String
   secondPart    String

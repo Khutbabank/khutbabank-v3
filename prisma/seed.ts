@@ -1,5 +1,4 @@
 import { PrismaClient } from '@prisma/client';
-import { where } from 'firebase/firestore';
 import fs from 'fs';
 import path from 'path';
 
@@ -44,27 +43,18 @@ async function main() {
 		throw new Error('khutbas.json must be an array of khutba objects');
 	}
 
-	for (const khutba of khutbas) {
-		// Ensure category exists before inserting khutba
-		// await prisma.category.upsert({
-		// 	where: { id: khutba.categoryId },
-		// 	update: {},
-		// 	create: {
-		// 		id: khutba.categoryId,
-		// 		name: khutba.categoryName ?? 'Uncategorized', // optional fallback
-		// 	},
-		// });
-
+	for (const khutba of khutbas.slice().reverse()) {
 		const category = await getCategoryByName(khutba.category);
 
 		await prisma.khutba.create({
 			data: {
 				author: khutba.author === 'none' ? null : khutba.author,
 				title: khutba.title,
+				description: khutba.description,
 				categoryId: category!.id,
 				firstPart: khutba.khutba_first_part,
 				secondPart: khutba.khutba_second_part,
-				thumbnailPath: khutba.imageId,
+				thumbnailPath: khutba.imageId + '.png',
 			},
 		});
 	}
