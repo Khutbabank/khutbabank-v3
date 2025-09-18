@@ -1,0 +1,31 @@
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Khutba {
+  id            String   @id @default(uuid())
+  createdAt     DateTime @default(now())
+  author        String
+  title         String
+  categoryId    String
+  firstPart     String
+  secondPart    String
+  thumbnailPath String
+  category      Category @relation(fields: [categoryId], references: [id])
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  name      String
+  khutbas   Khutba[]
+}
+
+enum crdb_internal_region {
+  aws_eu_west_2 @map("aws-eu-west-2")
+}
