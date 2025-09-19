@@ -6,8 +6,8 @@ interface GetKhutba {
 }
 
 export const getKhutbas = async () => {
-	let result = null;
-	let error = null;
+	let result;
+	let error;
 
 	try {
 		const res = await prisma.khutba.findMany();
@@ -21,8 +21,8 @@ export const getKhutbas = async () => {
 
 /* Limited to 4 khutbas */
 export const getLatestKhutbas = async () => {
-	let result = null;
-	let error = null;
+	let result;
+	let error;
 
 	try {
 		const res = await prisma.khutba.findMany({
@@ -38,8 +38,8 @@ export const getLatestKhutbas = async () => {
 };
 
 export const getKhutba = async ({ id }: GetKhutba) => {
-	let result = null;
-	let error = null;
+	let result;
+	let error;
 
 	try {
 		const res = await prisma.khutba.findFirst({
