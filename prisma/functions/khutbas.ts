@@ -11,7 +11,6 @@ export const getKhutbas = async () => {
 
 	try {
 		const res = await prisma.khutba.findMany();
-		console.log('res', res);
 		result = res;
 	} catch (e) {
 		error = e;
