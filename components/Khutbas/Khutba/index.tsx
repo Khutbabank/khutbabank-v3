@@ -2,30 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import toast from 'react-hot-toast';
-import { Timestamp } from 'firebase/firestore';
 
 import { Button } from '@/components/ui/button';
 
 interface Props {
-	category: string;
 	description: string;
 	id: string;
-	imageId: string;
 	title: string;
-	publishedOn: Timestamp;
 	imageUrl: string | null;
 	khutbaFirstPart: string;
 	khutbaSecondPart: string;
 }
 
-const Khutba = ({
-	title,
-	description,
-	category,
-	id,
-	publishedOn,
-	imageUrl,
-}: Props) => {
+const Khutba = ({ title, description, id, imageUrl }: Props) => {
 	const onDownloadButtonClick = (e: React.MouseEvent<HTMLElement>) => {
 		e.preventDefault();
 

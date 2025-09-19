@@ -1,9 +1,12 @@
 import KhutbaList from '@/components/Khutbas/KhutbaList';
+import { getKhutbas } from '@/prisma/functions/khutbas';
 
-const Khutbas = () => {
+const Khutbas = async () => {
+	const { result: khutbas, error } = await getKhutbas();
+
 	return (
 		<>
-			<KhutbaList />
+			<KhutbaList khutbas={khutbas} />
 		</>
 	);
 };

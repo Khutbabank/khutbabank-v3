@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { Input } from '@/components/ui/input';
 // import {
@@ -14,82 +14,39 @@ import Khutba from '../Khutba';
 import { getKhutbas, getKhutbaImage } from '@/firebase/functions/khutbas';
 import { Timestamp } from 'firebase/firestore';
 
-const KhutbaList = () => {
-	const [khutbas, setKhutbas] = useState<
-		Array<{
-			category: string;
-			description: string;
-			id: string;
-			imageId: string;
-			title: string;
-			createdTimestamp: Timestamp;
-			imageUrl: string | null;
-			khutba_first_part: string;
-			khutba_second_part: string;
-		}>
-	>();
+interface Props {
+	khutbas:
+		| {
+				id: string;
+				createdAt: Date;
+				author: string | null;
+				title: string;
+				description: string;
+				categoryId: string;
+				firstPart: string;
+				secondPart: string;
+				thumbnailPath: string;
+		  }[]
+		| null;
+}
+
+const KhutbaList = ({ khutbas }: Props) => {
 	const [filteredKhutbas, setFilteredKhutbas] = useState<
 		Array<{
-			category: string;
-			description: string;
 			id: string;
-			imageId: string;
+			createdAt: Date;
+			author: string | null;
 			title: string;
-			createdTimestamp: Timestamp;
-			imageUrl: string | null;
-			khutba_first_part: string;
-			khutba_second_part: string;
+			description: string;
+			categoryId: string;
+			firstPart: string;
+			secondPart: string;
+			thumbnailPath: string;
 		}>
 	>([]);
 	const [khutbaSearchText, setKhutbaSearchText] = useState<string>('');
-	const [loading, setLoading] = useState<boolean>(true);
+	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<boolean>(false);
-
-	useEffect(() => {
-		const getData = async () => {
-			const data = await getKhutbas();
-
-			if (data.result) {
-				// @ts-ignore - I had no choice
-				const khutbasWithImages = data.result.map((khutba: any) => ({
-					...khutba,
-					imageUrl: null,
-				}));
-
-				setKhutbas(data.result);
-				setLoading(false);
-
-				const imagePromises = khutbasWithImages.map(
-					async (khutba, index) => {
-						const imageData = await getKhutbaImage({
-							imageId: khutba.imageId,
-						});
-
-						if (imageData.result) {
-							setKhutbas((prevKhutbas: any) =>
-								prevKhutbas.map((k: any, i: any) =>
-									i === index
-										? { ...k, imageUrl: imageData.result }
-										: k,
-								),
-							);
-						}
-					},
-				);
-
-				await Promise.all(imagePromises);
-
-				return;
-			}
-
-			if (data.error) {
-				setError(true);
-				setLoading(false);
-			}
-		};
-
-		getData();
-	}, []);
 
 	const onSearchKhutbaInputChange = (
 		e: React.ChangeEvent<HTMLInputElement>,
@@ -158,13 +115,10 @@ const KhutbaList = () => {
 											key={i}
 											id={k.id}
 											description={k.description}
-											category={k.category}
-											imageId={k.imageId}
 											title={k.title}
-											publishedOn={k.createdTimestamp}
-											imageUrl={k.imageUrl}
-											khutbaFirstPart={k.khutba_first_part}
-											khutbaSecondPart={k.khutba_second_part}
+											imageUrl={`${process.env.NEXT_PUBLIC_THUMBNAIL_URL}/${k.thumbnailPath}`}
+											khutbaFirstPart={k.firstPart}
+											khutbaSecondPart={k.secondPart}
 										/>
 									))}
 
@@ -177,13 +131,10 @@ const KhutbaList = () => {
 											key={i}
 											id={k.id}
 											description={k.description}
-											category={k.category}
-											imageId={k.imageId}
 											title={k.title}
-											publishedOn={k.createdTimestamp}
-											imageUrl={k.imageUrl}
-											khutbaFirstPart={k.khutba_first_part}
-											khutbaSecondPart={k.khutba_second_part}
+											imageUrl={`${process.env.NEXT_PUBLIC_THUMBNAIL_URL}/${k.thumbnailPath}`}
+											khutbaFirstPart={k.firstPart}
+											khutbaSecondPart={k.secondPart}
 										/>
 									))}
 							</div>
