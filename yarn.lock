@@ -1848,9 +1848,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:^6.15.0":
-  version: 6.15.0
-  resolution: "@prisma/client@npm:6.15.0"
+"@prisma/client@npm:^6.16.2":
+  version: 6.16.2
+  resolution: "@prisma/client@npm:6.16.2"
   peerDependencies:
     prisma: "*"
     typescript: ">=5.1.0"
@@ -1859,7 +1859,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: c8d1b56185b7ccadc58409858d3a13f5628f656ea17ce7e7606153537fc6fa3984d3f388c69f42f36ec5d6f1711249da2a97c84210e44e4fe4957742f0055a42
+  checksum: 57e86bc06fdd32614459701123b129fb513390569054121419e9e1dd65f85ee52f1684c6ac896ca743e1c9b6f0f498808de637ab1d2ef3d1ce59b0edab3fe578
   languageName: node
   linkType: hard
 
@@ -6585,7 +6585,7 @@ __metadata:
   dependencies:
     "@pdfme/common": ^4.0.2
     "@pdfme/ui": ^4.0.2
-    "@prisma/client": ^6.15.0
+    "@prisma/client": ^6.16.2
     "@radix-ui/react-dropdown-menu": ^2.0.6
     "@radix-ui/react-label": ^2.0.2
     "@radix-ui/react-select": ^2.0.0
