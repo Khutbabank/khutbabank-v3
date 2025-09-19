@@ -11,8 +11,6 @@ import { Input } from '@/components/ui/input';
 // 	SelectValue,
 // } from '@/components/ui/select';
 import Khutba from '../Khutba';
-import { getKhutbas, getKhutbaImage } from '@/firebase/functions/khutbas';
-import { Timestamp } from 'firebase/firestore';
 
 interface Props {
 	khutbas:

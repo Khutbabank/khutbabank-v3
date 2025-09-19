@@ -32,7 +32,7 @@ const Khutba = ({ title, description, id, imageUrl }: Props) => {
 					className='rounded-2xl w-full h-[15rem] max-h-[15rem] object-cover object-center'
 				/>
 
-				<div className='flex flex-col gap-4 mt-6'>
+				<div className='flex flex-col gap-4 mt-6 mb-10'>
 					<p className='text-normal font-bold text-black'>{title}</p>
 					<p className='text-small text-black'>{description}</p>
 				</div>
@@ -60,7 +60,7 @@ const Khutba = ({ title, description, id, imageUrl }: Props) => {
 					</div>
 				</div> */}
 
-				<div className='flex flex-wrap gap-3 xl:flex-nowrap xl:gap-5 mt-10 w-full'>
+				<div className='flex flex-wrap gap-3 xl:flex-nowrap xl:gap-5 mt-auto w-full'>
 					<Link href={`/khutba/${id}`} className='w-full'>
 						<Button className='flex items-center justify-center gap-3 bg-primary text-white w-full'>
 							<i className='text-white text-xl ri-book-open-fill' />

@@ -37,3 +37,23 @@ export const getLatestKhutbas = async () => {
 
 	return { result, error };
 };
+
+export const getKhutba = async ({ id }: GetKhutba) => {
+	let result = null;
+	let error = null;
+
+	try {
+		const res = await prisma.khutba.findFirst({
+			where: {
+				id: {
+					equals: id,
+				},
+			},
+		});
+		result = res;
+	} catch (e) {
+		error = e;
+	}
+
+	return { result, error };
+};
