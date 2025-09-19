@@ -7,7 +7,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"seed": "tsx prisma/seed"
+		"seed": "tsx prisma/seed",
+		"postinstall": "prisma generate"
 	},
 	"dependencies": {
 		"@pdfme/common": "^4.0.2",
