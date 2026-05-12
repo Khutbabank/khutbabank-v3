@@ -1,5 +1,5 @@
 datasource db {
-  provider  = "postgresql"
+  provider = "postgresql"
 }
 
 generator client {
@@ -26,4 +26,3 @@ model Category {
   name      String
   khutbas   Khutba[]
 }
-
