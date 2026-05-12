@@ -1,11 +1,10 @@
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "./generated"
 }
 
 model Khutba {
@@ -28,6 +27,3 @@ model Category {
   khutbas   Khutba[]
 }
 
-enum crdb_internal_region {
-  aws_eu_west_2 @map("aws-eu-west-2")
-}

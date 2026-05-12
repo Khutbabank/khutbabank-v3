@@ -9,7 +9,7 @@
 One of the button code example:
 
 ```ts
-<Button className='bg-primary text-white font-bold rounded-full'>
+<Button className='bg-primary text-white font-bold rounded-full p-5'>
 	Get Khutba
 </Button>
 ```

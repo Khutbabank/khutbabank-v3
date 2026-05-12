@@ -2,57 +2,60 @@
 import prisma from '@/lib/prisma';
 
 interface GetKhutba {
-	id: string;
+  id: string;
 }
 
 export const getKhutbas = async () => {
-	let result;
-	let error;
+  let result;
+  let error;
 
-	try {
-		const res = await prisma.khutba.findMany();
-		result = res;
-	} catch (e) {
-		error = e;
-	}
+  try {
+    const res = await prisma.khutba.findMany();
+    result = res;
+  } catch (e) {
+    error = e;
+  }
 
-	return { result, error };
+  return { result, error };
 };
 
 /* Limited to 4 khutbas */
 export const getLatestKhutbas = async () => {
-	let result;
-	let error;
+  let result;
+  let error;
 
-	try {
-		const res = await prisma.khutba.findMany({
-			take: 4,
-			orderBy: { createdAt: 'desc' },
-		});
-		result = res;
-	} catch (e) {
-		error = e;
-	}
+  try {
+    const res = await prisma.khutba.findMany({
+      take: 4,
+      orderBy: { createdAt: 'desc' },
+    });
+    result = res;
+  } catch (e) {
+    error = e;
+  }
 
-	return { result, error };
+  return { result, error };
 };
 
 export const getKhutba = async ({ id }: GetKhutba) => {
-	let result;
-	let error;
+  let result;
+  let error;
 
-	try {
-		const res = await prisma.khutba.findFirst({
-			where: {
-				id: {
-					equals: id,
-				},
-			},
-		});
-		result = res;
-	} catch (e) {
-		error = e;
-	}
+  console.log('id', id);
 
-	return { result, error };
+  try {
+    const res = await prisma.khutba.findFirst({
+      where: {
+        id: {
+          equals: id,
+        },
+      },
+    });
+    console.log(res);
+    result = res;
+  } catch (e) {
+    error = e;
+  }
+
+  return { result, error };
 };

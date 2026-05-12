@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Inter } from 'next/font/google';
 
 import { Toaster } from 'react-hot-toast';
 
 import './globals.css';
 import 'remixicon/fonts/remixicon.css';
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -20,7 +23,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en'>
+		<html lang='en' className={cn("font-sans", inter.variable)}>
 			<body className={montserrat.className}>
 				<Toaster />
 				{children}
