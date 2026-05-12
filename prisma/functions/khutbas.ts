@@ -10,7 +10,9 @@ export const getKhutbas = async () => {
   let error;
 
   try {
-    const res = await prisma.khutba.findMany();
+    const res = await prisma.khutba.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
     result = res;
   } catch (e) {
     error = e;
@@ -40,8 +42,6 @@ export const getLatestKhutbas = async () => {
 export const getKhutba = async ({ id }: GetKhutba) => {
   let result;
   let error;
-
-  console.log('id', id);
 
   try {
     const res = await prisma.khutba.findFirst({
