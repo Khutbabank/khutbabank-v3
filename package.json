@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@pdfme/common": "^6.1.2",
+    "@pdfme/schemas": "^6.2.1",
     "@pdfme/ui": "^6.1.2",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
@@ -44,7 +45,7 @@
     "autoprefixer": "^10.5.0",
     "daisyui": "^5.5.19",
     "eslint": "^10",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "^16.3.6",
     "postcss": "^8",
     "shadcn": "^4.7.0",
     "tailwindcss": "^4.3.0",
