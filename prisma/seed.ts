@@ -1,4 +1,4 @@
-import { PrismaClient } from '../prisma/generated/client';
+import { PrismaClient } from './generated-node/client';
 import fs from 'fs';
 import path from 'path';
 import { PrismaPg } from '@prisma/adapter-pg';

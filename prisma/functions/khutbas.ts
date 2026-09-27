@@ -1,5 +1,5 @@
 // import { PrismaClient } from '@prisma/client';
-import prisma from '@/lib/prisma';
+import { getPrisma } from '@/lib/prisma';
 
 interface GetKhutba {
   id: string;
@@ -10,7 +10,7 @@ export const getKhutbas = async () => {
   let error;
 
   try {
-    const res = await prisma.khutba.findMany({
+    const res = await getPrisma().khutba.findMany({
       orderBy: { createdAt: 'desc' },
     });
     result = res;
@@ -27,7 +27,7 @@ export const getLatestKhutbas = async () => {
   let error;
 
   try {
-    const res = await prisma.khutba.findMany({
+    const res = await getPrisma().khutba.findMany({
       take: 4,
       orderBy: { createdAt: 'desc' },
     });
@@ -44,7 +44,7 @@ export const getKhutba = async ({ id }: GetKhutba) => {
   let error;
 
   try {
-    const res = await prisma.khutba.findFirst({
+    const res = await getPrisma().khutba.findFirst({
       where: {
         id: {
           equals: id,

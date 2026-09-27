@@ -5,6 +5,14 @@ datasource db {
 generator client {
   provider = "prisma-client"
   output   = "./generated"
+  runtime  = "workerd"
+}
+
+// Node.js client for scripts run outside the Worker (e.g. seed)
+generator nodeClient {
+  provider = "prisma-client"
+  output   = "./generated-node"
+  runtime  = "nodejs"
 }
 
 model Khutba {

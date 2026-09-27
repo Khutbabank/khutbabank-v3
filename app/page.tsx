@@ -4,6 +4,8 @@ import HomePageAboutUs from '@/components/Home/HomePageAboutUs';
 import BrowseVideoBank from '@/components/Home/BrowseVideoBank';
 import Footer from '@/components/Footer';
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
 	return (
 		<>
